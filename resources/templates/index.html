@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="blocks/fragments :: head('Home - SPARK', 'none')"></head>
+<body>
+<div th:replace="blocks/fragments :: navbar"></div>
+
+<!--Slider starts-->
+<!--Carousel Wrapper-->
+<div id="carouselFull" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselFull" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselFull" data-slide-to="1"></li>
+        <li data-target="#carouselFull" data-slide-to="2"></li>
+        <li data-target="#carouselFull" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a th:href="@{'/category/odg'}">
+                <img class="d-block img-fluid" src="img/ClothesBanner.png" alt="First slide">
+                <div class="carousel-caption d-md-block">
+                    <h3 class="text-left">[[#{index.titleFirst}]]</h3>
+                    <p class="text-left">[[#{index.textFirst}]]</p>
+                </div>
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a th:href="@{'/category'}">
+                <video class="d-block img-fluid" autoplay loop muted>
+                    <source src="img/samsungBanner.mp4"/>
+                </video>
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a th:href="@{'/category/mobilni_telefoni'}">
+                <img class="d-block img-fluid" src="img/PhonesBanner.png" alt="Second slide">
+                <div class="carousel-caption d-md-block" style="margin-bottom: 55px">
+                    <h3 class="text-left">[[#{index.titleSecond}]]</h3>
+                    <p class="text-left">[[#{index.textSecond}]]</p>
+                </div>
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a th:href="@{'/category/elektronika'}">
+                <img class="d-block img-fluid" src="img/ElectronicsBanner.png" alt="Third slide">
+                <div class="carousel-caption d-md-block">
+                    <h3 class="text-left">[[#{index.titleThird}]]</h3>
+                    <p class="text-left">[[#{index.textThird}]]</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!--Controls-->
+    <a class="carousel-control-prev" href="#carouselFull" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselFull" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<!--Categories with products starts-->
+<main>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg mt-3 mb-4 rounded">
+            <span class="navbar-brand">[[#{index.categories}]]</span>
+
+            <!--For smartphones menu-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#nextNav" aria-controls="nextNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                <i class="fas fa-bars" style="color:#fff; font-size:26px;"></i>
+
+            </button>
+            <div class="collapse navbar-collapse" id="nextNav">
+                <ul class="navbar-nav mx-auto justify-content-center">
+                    <div th:each="categories : ${listCategories}">
+                        <li class="nav-item">
+                            <a class="nav-link rounded"
+                               th:href="@{'/category/'+ ${categories.alias}}">[[${categories.title}]]</a>
+
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+        <section class="text-center mb-4">
+            <div class="row wow faceIn">
+                <th:block th:each="product : ${listProducts}">
+                    <div class="col-6 col-sm-6 col-md-3 my-3 mb-4">
+                        <div class="card">
+                            <a th:href="@{'/product/'+${product.alias}}">
+                                <div class="view overlay">
+                                    <img class="card-img-top"
+                                         th:src="'/product-images/'+${product.imageURL}"/>
+                                    <div class="mask rgba-white-slight"></div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="grey-text">
+                                        <h5>[[${product.shortTitle}]]</h5>
+                                    </div>
+                                    <h5 class="font-weight-bold blue-text">
+                                        <strong>
+                                            [[${product.price}]] &#8372;
+                                        </strong>
+                                    </h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </th:block>
+            </div>
+
+        </section>
+    </div>
+</main>
+
+<footer th:insert="~{blocks/fragments :: footer}"></footer>
+<div th:insert="~{blocks/fragments :: scripts}"></div>
+</body>
+</html>

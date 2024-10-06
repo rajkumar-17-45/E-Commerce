@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="blocks/fragments :: head('Orders - SENKO', 'none')">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS (if any) -->
+    <style>
+        .table thead th {
+            border-bottom: 2px solid #ffffff; /* White border for table header */
+        }
+        #admin-order-heading {
+            color: #343a40; /* Dark color for heading */
+        }
+    </style>
+</head>
+<body id="admin-">
+<div th:replace="blocks/fragments :: admin_navbar"></div>
+<div class="container-fluid" id="top-admin-order">
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mt-3 text-center" id="admin-order-heading">[[#{admin.orders.create.title}]]</h2>
+        </div>
+    </div>
+
+    <!-- Search Form -->
+   <!-- Search Form -->
+<form th:action="@{/admin/orders/search}" method="get" class="form-inline mb-3">
+    <div class="form-group mr-2">
+        <input type="text" class="form-control" name="login" placeholder="Search by Login" th:value="${param.login}">
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+    <a href="/admin/orders" class="btn btn-secondary ms-2">Clear</a>
+</form>
+
+
+    <!-- Success Message -->
+    <div class="row">
+        <div class="col-12">
+            <div th:if="${message != null}" class="alert alert-success text-center" id="manage-orders">
+                [[${message}]]
+            </div>
+        </div>
+    </div>
+
+    <!-- Orders Table -->
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover text-center" id="admin-order">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>[[#{admin.order.id}]]</th>
+                            <th>[[#{admin.users.login}]]</th>
+                            <th>[[#{admin.order.orderStatus}]]</th>
+                            <th>[[#{admin.order.shipping}]]</th>
+                            <th>[[#{admin.order.city}]]</th>
+                            <th>[[#{admin.order.address}]]</th>
+                            <th>[[#{admin.order.total}]]</th>
+                            <th>[[#{admin.managment}]]</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="order : ${orders}">
+                            <td th:text="${order.id}"></td>
+                            <td th:text="${order.user.login}"></td>
+                            <td th:text="${order.orderStatus}"></td>
+                            <td th:text="${order.shippingType}"></td>
+                            <td th:text="${order.city}"></td>
+                            <td th:text="${order.address}"></td>
+                            <td th:text="${order.totalPrice}"></td>
+                            <td>
+                                <a class="fas fa-edit fa-2x" th:href="@{'/admin/orders/edit/' + ${order.id}}" title="Edit this order" id="admin-order-edit"></a>
+                                &nbsp;
+                                <a class="fas fa-trash-alt fa-2x" th:href="@{'/admin/orders/delete/' + ${order.id}}" title="Delete this order" id="admin-order-delete"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="row">
+        <div class="col-12">
+            <div th:replace="blocks/fragments :: pagination('/admin/orders', 'order')"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div th:insert="~{blocks/fragments :: additional_footer}"></div>
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<div th:insert="~{blocks/fragments :: scripts}"></div>
+</body>
+</html>

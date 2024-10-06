@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<!--Header-->
+<head th:fragment="head(title, remove)" th:remove="${remove}">
+    <meta charset="UTF-8">
+    <title>[[${title}]]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" type="image/x-icon" th:href="@{/assets/favicon.png}"/>
+ 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+  
+    <link rel="stylesheet" th:href="@{/css/mdb.css}"/>
+
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+
+</head>
+
+<!--Main scripts-->
+<div th:fragment="scripts" xmlns:th="http://www.thymeleaf.org">
+    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <script type="text/javascript">
+        contextPath = "[[@{/}]]";
+        var csrfHeaderName = "[[${_csrf.headerName}]]";
+        var csrfValue = "[[${_csrf.token}]]";
+    </script>
+</div>
+<!--Navigation bar-->
+<nav th:fragment="navbar" class="navbar sticky-top navbar-expand-lg">
+    <div class="container">
+        <!--Logo-->
+        <a href="/" class="navbar-brand waves-effect rounded">
+            <img th:src="@{/assets/title.png}" width="100">
+        </a>
+        <!--For smartphones menu-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <i class="fas fa-bars" style="color:#fff; font-size:26px;"></i>
+        </button>
+        <!--Left-->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link waves-effect rounded" aria-current="page" href="/">[[#{navbar.home}]]</a>
+                </li>
+                <li class="nav-item"><a class="nav-link waves-effect rounded"
+                                        href="/category">[[#{navbar.category}]]</a></li>
+            </ul>
+            <ul class="navbar-nav mr-auto ml-auto">
+                <li class="custom_item">
+                    <form class="form-inline" th:action="@{/search}" method="get">
+                       
+                    </form>
+                </li>
+            </ul>
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item">
+                    <a sec:authorize="isAuthenticated()" href="/basket" class="nav-link waves-effect rounded">
+                        <em class="fa fa-shopping-cart"></em>
+                        <span class="clearfix d-none d-sm-inline-block">[[#{navbar.cart}]]</span>
+                    </a>
+                    <a sec:authorize="isAnonymous()" class="nav-link waves-effect waves-light rounded"
+                       data-toggle="modal" href="#loginModal" role="button">
+                        <em class="fa fa-shopping-cart"></em>
+                        <span class="clearfix d-none d-sm-inline-block">[[#{navbar.cart}]]</span></span>
+                    </a>
+                </li>
+                <!--Profile dropdown-->
+                <li class="nav-item dropdown ml-3" sec:authorize="isAnonymous()">
+                    <a sec:authorize="isAnonymous()" class="nav-link waves-effect waves-light rounded"
+                       data-toggle="modal" href="#loginModal" role="button">
+                        <span class="fas fa-user text-white"></span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown ml-3" sec:authorize="isAuthenticated()">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light text-white font-weight-bold rounded"
+                       id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false"><span class="fas fa-user text-white"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-cyan animated slideIn text-center"
+                         aria-labelledby="navbarDropdownMenuLink-4">
+                        <a class="text-danger dropdown-item waves-effect waves-light rounded" href="/admin"
+                           sec:authorize="hasAuthority('ADMIN')">[[#{navbar.admin}]]</a>
+                        <a class="dropdown-item waves-effect waves-light" href="/profile"
+                           sec:authorize="isAuthenticated()">[[#{navbar.myAccount}]]</a>
+                        <a class="dropdown-item waves-effect waves-light" href="/orders"
+                           sec:authorize="isAuthenticated()">[[#{navbar.myOrders}]]</a>
+                        <a class="dropdown-item waves-effect waves-light" href="/logout"
+                           sec:authorize="isAuthenticated()">[[#{navbar.logout}]]</a>
+                    </div>
+                </li>
+                <!--GitHub, linked ect icons-->
+               
+               
+               
+            </ul>
+        </div>
+    </div>
+    <!--Login modal-->
+    <div th:replace="/blocks/login :: loginModal"></div>
+
+</nav>
+
+<!--Navigation bar-->
+<nav th:fragment="admin_navbar" class="navbar sticky-top navbar-expand-lg">
+    <div class="container">
+        <!--Logo-->
+        <a href="/" class="navbar-brand waves-effect rounded">
+            <img th:src="@{/assets/logo.gif}" width="100">
+        </a>
+        <!--For smartphones menu-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarContent2" aria-controls="navbarContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <i class="fas fa-bars" style="color:#fff; font-size:26px;"></i>
+        </button>
+        <!--Left-->
+        <div class="collapse navbar-collapse" id="navbarContent2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link waves-effect rounded" aria-current="page" href="/admin">[[#{admin_nav.home}]]</a>
+                </li>
+                <li class="nav-item"><a class="nav-link waves-effect rounded"
+                                        href="/admin/products">[[#{admin_nav.products}]]</a>
+                </li>
+                <li class="nav-item"><a class="nav-link waves-effect rounded"
+                                        href="/admin/users">[[#{admin_nav.users}]]</a>
+                </li>
+                <li class="nav-item"><a class="nav-link waves-effect rounded"
+                                        href="/admin/orders">[[#{admin_nav.orders}]]</a>
+                </li>
+                <li class="nav-item"><a class="nav-link waves-effect rounded"
+                                        href="/admin/categories">[[#{admin_nav.categories}]]</a>
+                </li>
+                <li class="nav-item"><a class="nav-link waves-effect rounded"
+                                        href="/admin/vendors">[[#{admin_nav.vendors}]]</a>
+                </li>
+                </li>
+                <li class="nav-item"><a class="nav-link waves-effect rounded"
+                                        href="/admin/order_baskets">[[#{admin_nav.order_baskets}]]</a>
+                </li>
+            </ul>
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item dropdown ml-3" sec:authorize="isAuthenticated()">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light text-white font-weight-bold rounded"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false"><span class="fas fa-user text-white"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-cyan animated slideIn text-center"
+                         aria-labelledby="navbarDropdownMenuLink-4">
+                        <a class="dropdown-item waves-effect waves-light" href="/logout"
+                           sec:authorize="isAuthenticated()">[[#{navbar.logout}]]</a>
+                    </div>
+                </li>
+                <!--GitHub, linked ect icons-->
+              
+                
+               
+            </ul>
+        </div>
+    </div>
+    <!--Login modal-->
+    <div th:replace="/blocks/login :: loginModal"></div>
+
+</nav>
+
+
+<!--Footer-->
+<footer th:fragment="footer" class="footer text-center text-lg-start mt-5">
+    <!-- Grid container -->
+    <div class="container p-4">
+        <!--Grid row-->
+        <div class="row mt-4">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4">[[#{footer.titleAbout}]]</h5>
+                <p><strong>Quickcart</strong> [[#{footer.textAbout}]]</p>
+
+              
+                <div class="mt-4">
+                   
+                   <!-- Facebook -->
+<!-- Facebook -->
+<button onclick="location.href='https://www.facebook.com/your-facebook-profile'" type="button"
+        class="btn btn-circle btn-md">
+    <em class="fab fa-facebook fa-lg"></em></button>
+<!-- Instagram -->
+<button onclick="location.href='https://www.instagram.com/your-instagram-profile'" type="button"
+        class="btn btn-circle btn-md">
+    <em class="fab fa-instagram fa-lg"></em></button>
+<!-- Twitter -->
+<button onclick="location.href='https://www.x.com/your-x-profile'" type="button" class="btn btn-circle btn-md">
+    <span style="font-size: 24px;">&#x2716;</span> <!-- Unicode for X symbol -->
+</button>
+
+
+                   
+                </div>
+            </div>
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4 pb-1">[[#{footer.address}]]</h5>
+
+                <ul class="fa-ul" style="margin-left: 1.65em;">
+                    <li class="mb-3">
+                        <span class="fa-li"><em class="fas fa-home"></em></span><span
+                            class="ms-2">[[#{footer.city}]]</span>
+                    </li>
+                    <li class="mb-3">
+                        <span class="fa-li"><em class="fas fa-envelope"></em></span><span
+                            class="ms-2">rajkumarperiyasamy7@outlook.com</span>
+                    </li>
+                    <li class="mb-3">
+                        <span class="fa-li"><em class="fas fa-phone"></em></span><span
+                            class="ms-2">+91 8072419838</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4">[[#{footer.findUs}]]</h5>
+                <iframe class="google_map rounded"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62220.42259601357!2d80.0717553687558!3d12.922087131666203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525f14844aad0f%3A0xe16d3a66c4ce38d4!2sTambaram%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1725639693557!5m2!1sen!2sin"
+                        allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+           
+        </div>
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center copyright p-3">
+        <span class="credit">[[#{footer.created}]] <a href="https://github.com/rajkumar-17-45">RAJ</a> | </span>
+        <span class="far fa-copyright"></span><span> [[#{footer.copyright}]]</span>
+    </div>
+</footer>
+
+
+<!--Pagination for whole site-->
+<a th:fragment="page_link(moduleURL, pageNum, label)"
+   class="page-link"
+   th:href="@{${moduleURL} + '/page/' + ${pageNum}}">
+    [[${label}]]
+</a>
+<div th:fragment="pagination(moduleURL, entityName)" th:remove="tag">
+    <div class="text-center m-1" th:if="${totalItems > 0}">
+        <span style="font-weight: 400; color: #6e757d">[[#{pagination.showing}]] # [[${startCount}]] [[#{pagination.to}]] [[${endCount}]] [[#{pagination.of}]] [[${totalItems}]]</span>
+    </div>
+    <div class="text-center m-1 mb-4 mt-5" th:unless="${totalItems > 0}">
+        <span style="font-weight: 400; color: #6e757d">[[#{pagination.no}]] [[#{pagination.found}]]</span>
+    </div>
+
+    <div th:if="${totalPages > 1}">
+        <nav>
+            <ul class="pagination justify-content-center flex-wrap">
+                <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                    <a th:replace="/blocks/fragments :: page_link(${moduleURL}, 1, #{pagination.first})"></a>
+                </li>
+                <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                    <a th:replace="/blocks/fragments :: page_link(${moduleURL}, ${currentPage - 1}, #{pagination.previous})"></a>
+                </li>
+                <li th:class="${currentPage != i ? 'page-item' : 'page-item active'}"
+                    th:each="i : ${#numbers.sequence(1, totalPages)}">
+                    <a th:replace="/blocks/fragments :: page_link(${moduleURL},${i}, ${i})"></a>
+                </li>
+                <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
+                    <a th:replace="/blocks/fragments :: page_link(${moduleURL}, ${currentPage + 1}, #{pagination.next})"></a>
+                </li>
+                <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
+                    <a th:replace="/blocks/fragments :: page_link(${moduleURL}, ${totalPages}, #{pagination.last})"></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<!--Pagination for admin page(used only in product,
+but can be also used in another admin pages if you modify code to sort and search-->
+<a th:fragment="page_link2(moduleURL, pageNum, label)"
+   class="page-link"
+   th:href="@{${moduleURL} + '/page/' + ${pageNum} +'?sortField=' +${sortField} + '&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''} + ${categoryId != null ? '&categoryId='+ categoryId : ''}}">
+    [[${label}]]
+</a>
+<div th:fragment="paginationAdmin(moduleURL, entityName)" th:remove="tag">
+    <div class="text-center m-1" th:if="${totalItems > 0}">
+        <span style="font-weight: 400; color: #6e757d">[[#{pagination.showing}]] # [[${startCount}]] [[#{pagination.to}]] [[${endCount}]] [[#{pagination.of}]] [[${totalItems}]]</span>
+    </div>
+    <div class="text-center m-1 mb-4 mt-5" th:unless="${totalItems > 0}">
+        <span style="font-weight: 400; color: #6e757d">[[#{pagination.no}]] [[#{pagination.found}]]</span>
+    </div>
+
+    <div th:if="${totalPages > 1}">
+        <nav>
+            <ul class="pagination justify-content-center flex-wrap">
+                <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                    <a th:replace="/blocks/fragments :: page_link2(${moduleURL}, 1, #{pagination.first})"></a>
+                </li>
+                <li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'}">
+                    <a th:replace="/blocks/fragments :: page_link2(${moduleURL}, ${currentPage - 1}, #{pagination.previous})"></a>
+                </li>
+                <li th:class="${currentPage != i ? 'page-item' : 'page-item active'}"
+                    th:each="i : ${#numbers.sequence(1, totalPages)}">
+                    <a th:replace="/blocks/fragments :: page_link2(${moduleURL},${i}, ${i})"></a>
+                </li>
+                <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
+                    <a th:replace="/blocks/fragments :: page_link2(${moduleURL}, ${currentPage + 1}, #{pagination.next})"></a>
+                </li>
+                <li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'}">
+                    <a th:replace="/blocks/fragments :: page_link2(${moduleURL}, ${totalPages}, #{pagination.last})"></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<!--Button + - for products and checkout-->
+<div class="h-80 d-flex align-items-center justify-content-center" th:fragment="quantity_control(qtyValue, productId)">
+    <nav>
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link minusButton" href="" th:pid="${productId}"><b>-</b></a>
+            </li>
+
+            <li class="page-item" id="add-cart-button">
+                <input type="text" th:value="${qtyValue}" class="form-control text-center"
+                       onkeydown="return false;" style="max-width: 55px; max-height: 35px"
+                       th:id="'quantity'+${productId}"/>
+            </li>
+
+            <li class="page-item">
+                <a class="page-link plusButton" href="" th:pid="${productId}"><b>+</b></a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div th:fragment="additional_footer" class="text-center copyright mt-5 p-4" style="background-color: black; color: white;">
+    <hr/>
+    <span class="credit">[[#{footer.created}]] <a href="https://github.com/rajkumar-17-45" style="color: white;">RAJ</a> | </span>
+    <span class="far fa-copyright"></span><span> [[#{footer.copyright}]]</span>
+</div>
+
+
+<div th:fragment="showModal" class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+       
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalTitle">Warning</h4>
+            </div>
+            <div class="modal-body">
+                <span id="modalBody">This is content</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger rounded" data-dismiss="modal">[[#{modal.closeBtn}]]</button>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+</html>

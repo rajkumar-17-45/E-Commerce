@@ -1,0 +1,4058 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,300');
+
+* {
+    margin: 0;
+    padding: 0;
+    /*Color for all text*/
+    /*color: #fff;*/
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 200;
+    text-decoration: none;
+}
+
+.navbar {
+    /*Color bg of navbar*/
+    /*background: #171c24;*/
+    background:#1b76d1;
+    /*background-image: linear-gradient(to bottom,#08c,#04c);*/
+    /*background: linear-gradient(120deg, #0cf9e5, #5a84eb);*/
+}
+
+.navbar-nav .language_selector {
+    margin-left: 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 250;
+    letter-spacing: 1px
+}
+
+.language_selector {
+    margin-left: 10px;
+    color: #222;
+    font-size: 18px;
+    font-weight: 250;
+    letter-spacing: 1px
+}
+
+.language_selector .custom_link:hover {
+    color: #7D2C1D;
+    transition: 0.3s ease;
+}
+
+.language_selector .custom_link {
+    color: #222;
+}
+
+.navbar-nav .language_selector .custom_link:hover {
+    color: #FFE4B8;
+    transition: 0.3s ease;
+}
+
+.navbar-nav .language_selector .custom_link {
+    color: #fff;
+}
+
+.search-box {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    right: 70px;
+}
+
+.input-search {
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: transparent;
+    padding: 10px 40px 10px 10px;
+    color: #fff;
+}
+
+.input-search::placeholder {
+    color: rgba(255, 255, 255, .5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+.btn-search {
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color: #ffffff;
+    background-color: transparent;
+    pointer-events: painted;
+}
+
+.btn-search:hover {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-search:hover ~ .input-search {
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border: none;
+    transition: all 500ms;
+}
+
+.input-search:hover {
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border: none;
+    transition: .2s;
+}
+@media (max-width: 992px) {
+    .custom_item {
+        padding-right: 0.5rem;
+        padding-left: 4rem;
+    }
+}
+
+div.vertical-line {
+    width: 0.5px; /* Line width */
+    background-color: #fff; /* Line color */
+    height: 50%; /* Override in-line if you want specific height. */
+    display: inline-block;
+    /* Causes the line to float to left of content.
+           You can instead use position:absolute or display:inline-block
+           if this fits better with your design */
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+    font-size: 21px;
+    font-weight: 300;
+}
+
+/*Color for links in bar*/
+.navbar .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+/*Animation and design for navbar*/
+.navbar .navbar-nav .nav-link:hover {
+    background-color:rgb(51,51,51);;
+}
+
+/* stroke for navbar*/
+.navbar .navbar-nav .nav-item {
+    position: relative;
+}
+
+.navbar .navbar-nav .nav-item::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+    transition: all 0.5s;
+
+}
+
+/*Style for breadcrumb*/
+.breadcrumb {
+    background-color: unset;
+}
+
+/*Styles for breadcrumb items separate*/
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    font-size: 15px;
+    font-weight: 300;
+    color: #d5d5d5;
+}
+
+.navbar .navbar-nav .nav-item:hover::after {
+    width: 100%;
+}
+
+.category_label {
+    color: #6e757d;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.category_label:hover {
+    color: #918f8f;
+    transition: 0.6s ease;
+}
+
+.pagination > li > a {
+    background-color: white;
+    color: #BD824C;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+    color: #5a5a5a;
+    background-color: #eee;
+    border-color: #ddd;
+    transition: 0.6s ease;
+}
+
+.pagination > .active > a {
+    color: white;
+    background-color: #BD824C !Important;
+    border: solid 1px #BD824C !Important;
+}
+
+.pagination > .active > a:hover {
+    background-color: #BD824C !Important;
+    border: solid 1px #BD824C;
+}
+
+/* Carousel */
+
+.carousel-caption {
+    margin-left: 120px;
+    padding-bottom: 4%;
+    top: auto;
+    width: 450px;
+    flex-wrap: wrap;
+}
+
+.carousel-caption h3 {
+    font-size: 35px;
+    margin-bottom: 3%;
+    /*font-weight: bold;*/
+}
+
+.carousel-caption p {
+    margin-top: 1%;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 1%;
+}
+
+/*Text adaptation for carousel*/
+@media (max-width: 1163px) {
+    .carousel-caption {
+        margin-left: 80px;
+        padding-bottom: 3%;
+        top: auto;
+        width: 350px;
+        flex-wrap: wrap;
+    }
+
+    .carousel-caption h3 {
+        font-size: 21px;
+        margin-bottom: 3%;
+        /*font-weight: bold;*/
+    }
+
+    .carousel-caption p {
+        margin-top: 1%;
+        font-size: 12px;
+        margin-bottom: 1%;
+    }
+}
+
+@media (max-width: 860px) {
+    .carousel-caption {
+        margin-left: 50px;
+        padding-bottom: 3%;
+        top: auto;
+        width: 250px;
+        flex-wrap: wrap;
+    }
+
+    .carousel-caption h3 {
+        font-size: 19px;
+        margin-bottom: 3%;
+        /*font-weight: bold;*/
+    }
+
+    .carousel-caption p {
+        margin-top: 1%;
+        font-size: 10px;
+        margin-bottom: 1%;
+    }
+}
+
+@media (max-width: 665px) {
+    .carousel-caption {
+        margin-left: 30px;
+        padding-bottom: 1%;
+        margin-top: 3%;
+        width: 150px;
+        flex-wrap: wrap;
+    }
+
+    .carousel-caption h3 {
+        font-size: 15px;
+        margin-bottom: 3%;
+        /*font-weight: bold;*/
+    }
+
+    .carousel-caption p {
+        margin-top: 1%;
+        font-size: 8px;
+        margin-bottom: 1%;
+    }
+}
+
+@media (max-width: 665px) {
+    .carousel-caption {
+        margin-left: 20px;
+        padding-bottom: 0;
+        margin-top: 9%;
+        width: 150px;
+        flex-wrap: wrap;
+    }
+
+    .carousel-caption h3 {
+        font-size: 13px;
+        margin-bottom: 1%;
+        /*font-weight: bold;*/
+    }
+
+    .carousel-caption p {
+        margin-top: 1%;
+        font-size: 5px;
+        margin-bottom: 0;
+    }
+}
+
+/*!Text adaptation for carousel*/
+
+
+.form-group #icon1,
+.form-group #icon2 {
+    /*position: absolute;*/
+    color: #222;
+    margin-left: 10px;
+    /*padding: 10px;*/
+    /*right: 0;*/
+    /*top: 50%;*/
+    /*transform: translateY(-50%);*/
+    cursor: pointer;
+}
+
+/*Animation for dropdown*/
+@media (min-width: 768px) {
+    .animate {
+        animation-duration: 0.3s;
+        -webkit-animation-duration: 0.3s;
+        animation-fill-mode: both;
+        -webkit-animation-fill-mode: both;
+    }
+}
+
+@media (max-width: 768px) {
+    .animate {
+        animation-duration: 0.3s;
+        -webkit-animation-duration: 0.3s;
+        animation-fill-mode: both;
+        -webkit-animation-fill-mode: both;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes slideIn {
+    0% {
+        -webkit-transform: transform;
+        -webkit-opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        -webkit-opacity: 1;
+    }
+
+    0% {
+        -webkit-transform: translateY(1rem);
+        -webkit-opacity: 0;
+    }
+}
+
+.slideIn {
+    -webkit-animation-name: slideIn;
+    animation-name: slideIn;
+}
+
+/*!Carousel*/
+
+/*Sizing product cards on index page*/
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+/*Styling social buttons*/
+
+.btn-circle.btn {
+    background: #360000;
+    transition: 0.5s ease;
+}
+
+.btn-circle.btn-md {
+    width: 50px;
+    height: 50px;
+    padding: 7px 10px;
+    border-radius: 25px;
+    font-size: 10px;
+    text-align: center;
+}
+
+.btn-circle.btn:hover {
+    color: #fff;
+    background: #f12020;
+}
+
+/*Styles for footer text*/
+.footer {
+    /*background: #171c24;*/
+    background:black;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+/*Copyright style*/
+
+.text-center .copyright {
+      background:#1b76d1;
+}
+
+.text-center .copyright span {
+    color:white;;
+}
+
+/*Styling tables for pages user and orders*/
+@media only screen and (max-width: 790px) {
+    #tableB,
+    #user_main,
+    #tableA {
+        margin-top: 16px;
+    }
+
+    #tableB tr td img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100px;
+    }
+
+
+    #tableB, #tableB thead, #tableB tbody,
+    #tableB th, #tableB td, #tableB tr {
+        display: block;
+    }
+
+    #user_main, #user_main thead, #user_main tbody,
+    #user_main th, #user_main td, #user_main tr {
+        display: block;
+    }
+
+    #tableA, #tableA thead, #tableA tbody,
+    #tableA th, #tableA td, #tableA tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    #tableB thead tr,
+    #user_main thead tr,
+    #tableA thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    #tableB tbody tr,
+    #user_main tbody tr,
+    #tableA tbody tr {
+        border: 1px solid #ccc;
+    }
+
+    #tableB tbody td,
+    #user_main tbody td,
+    #tableA tbody td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        height: 49px;
+        width: 100%;
+    }
+
+    #tableB tfoot,
+    #user_main tfoot,
+    #tableA tfoot {
+        width: 100%;
+    }
+
+    #tableB tfoot td,
+    #user_main tfoot td,
+    #tableA tfoot td {
+        /* Behave  like a "row" */
+        border: none;
+        position: relative;
+        height: 49px;
+        width: 100%;
+    }
+
+    #tableB tbody td:before,
+    #user_main tbody td:before,
+    #tableA tbody td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        text-align: center;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+
+    }
+
+    /*
+    Label the data for table Orders
+    */
+    #tableA tbody td:nth-of-type(1):before {
+        content: "Number";
+    }
+
+    #tableA tbody td:nth-of-type(2):before {
+        content: "Payment";
+    }
+
+    #tableA tbody td:nth-of-type(3):before {
+        content: "Your name";
+    }
+
+    #tableA tbody td:nth-of-type(4):before {
+        content: "Shipping type";
+    }
+
+    #tableA tbody td:nth-of-type(5):before {
+        content: "City";
+    }
+
+    #tableA tbody td:nth-of-type(6):before {
+        content: "Address";
+    }
+
+    #tableA tbody td:nth-of-type(7):before {
+        content: "Total";
+    }
+
+    /*
+      Label the data for table Delivery
+      */
+    #tableB tbody td:nth-of-type(1):before {
+        content: "Number";
+    }
+
+    #tableB tbody td:nth-of-type(2):before {
+        content: "Status";
+    }
+
+    #user_main tbody td:nth-of-type(1):before {
+        content: "Login";
+    }
+
+    #user_main tbody td:nth-of-type(2):before {
+        content: "Password";
+    }
+
+    #user_main tbody td:nth-of-type(3):before {
+        content: "Name";
+    }
+
+    #user_main tbody td:nth-of-type(4):before {
+        content: "Surname";
+    }
+
+    #user_main tbody td:nth-of-type(5):before {
+        content: "Phone";
+    }
+
+    #user_main tbody td:nth-of-type(6):before {
+        content: "Email";
+    }
+}
+
+table input.form-control {
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .btn-responsive {
+        padding: 2px 4px;
+        font-size: 80%;
+        line-height: 1;
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .btn-responsive {
+        padding: 4px 9px;
+        font-size: 90%;
+        line-height: 1.2;
+    }
+}
+
+/*!Styling tables for pages user and orders*/
+
+.error-middle {
+    padding-top: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/*Error page design*/
+svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -400px;
+}
+
+.message-box {
+    height: 200px;
+    width: 380px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: 50px;
+    color: #222;
+    font-weight: 300;
+
+}
+
+.message-box h1 {
+    font-size: 60px;
+    line-height: 46px;
+    margin-bottom: 40px;
+}
+
+.buttons-con .action-link-wrap {
+    margin-top: 40px;
+}
+
+.buttons-con .action-link-wrap a {
+    background: #68c950;
+    padding: 8px 25px;
+    border-radius: 4px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px
+}
+
+.buttons-con .action-link-wrap a:hover {
+    background: #5A5C6C;
+    color: #fff;
+}
+
+#Polygon-1, #Polygon-2, #Polygon-3, #Polygon-4, #Polygon-4, #Polygon-5 {
+    animation: float 1s infinite ease-in-out alternate;
+}
+
+#Polygon-2 {
+    animation-delay: .2s;
+}
+
+#Polygon-3 {
+    animation-delay: .4s;
+}
+
+#Polygon-4 {
+    animation-delay: .6s;
+}
+
+#Polygon-5 {
+    animation-delay: .8s;
+}
+
+@keyframes float {
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+@media (max-width: 450px) {
+    svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -250px;
+        margin-left: -190px;
+    }
+
+    .message-box {
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -190px;
+        text-align: center;
+    }
+}
+
+
+.text-center .copyright a {
+    color: #f12020;
+    text-decoration: none;
+}
+
+.text-center .copyright a:hover {
+    text-decoration: underline;
+}
+
+/*Pop login/reg, buttons*/
+
+.form-group .input-group-append button,
+.modal .modal-body input {
+    display: block;
+    width: 250px;
+    margin-bottom: 20px;
+    outline: none;
+    height: 40px;
+    border: 1px solid #e6e6e6;
+    padding: 0px 10px;
+}
+
+.form-group .regButton {
+    display: block;
+    width: 100px;
+    margin-bottom: 20px;
+    outline: none;
+    height: 40px;
+    border: 1px solid #e6e6e6;
+    padding: 0px 10px;
+}
+
+.container .productBtn {
+    display: block;
+    width: 200px;
+    margin-bottom: 20px;
+    outline: none;
+    height: 40px;
+    border: 1px solid #e6e6e6;
+    padding: 0px 10px;
+}.container .productBtn,
+.form-group .regButton,
+.modal .modal-body input[type=submit] {
+    background: #171c24;
+    color: #fff;
+    transition: 0.6s ease;
+}
+
+
+
+.modal .modal-body button {
+    background: #171c24;
+    color: #fff;
+    transition: 0.6s ease;
+    border: 2px solid transparent;
+}
+
+.modal .modal-body button:hover {
+    color: #fff;
+    border: 2px solid transparent;
+    background: #f12020;
+}
+
+
+.container .productBtn:hover,
+.form-group .regButton:hover,
+.modal .modal-body input[type=submit]:hover {
+    color: #fff;
+    background: #f12020;
+}
+
+
+.custom_buttons {
+    background:hite;
+    color: #fff;
+    transition: 0.6s ease;
+    border: 2px solid transparent;
+}
+
+.custom_buttons:hover {
+    color: #fff;
+    border: 2px solid transparent;
+    background: #f12020;
+}
+
+/*Prevent modal problems when fade overlaps modal as well
+and */
+
+.modal {
+    background: rgba(0, 0, 0, 0.5) !important; /* !important is applied correctly here */
+    margin-right: 0px; /* No need for !important if not required */
+}
+
+
+
+.modal-backdrop {
+    display: none;
+}
+
+.navbar-fixed-top {
+    padding-right: inherit;
+}
+
+/*!Prevent modal problems when fade overlaps modal as well*/
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+}
+/* General Styles */
+.shopping-cart {
+    padding-bottom: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Block Heading Styles */
+.shopping-cart .block-heading {
+    padding-top: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.shopping-cart .block-heading h2 {
+    font-size: 2rem;
+    color: #333; /* Dark Gray */
+    font-weight: 700;
+}
+
+.shopping-cart .block-heading p {
+    font-size: 1.2rem;
+    color: #555; /* Medium Gray */
+    margin-top: 10px;
+}
+
+/* Content Styles */
+.shopping-cart .content {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* White */
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+/* Product Name Styles */
+.shopping-cart .product-name 
+{
+	font-size:20px;
+	   color: #BD824C;
+	 font-weight: 400;
+}
+
+.shopping-cart .product-name a {
+    color: #1a73e8; /* Blue */
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none; /* Removes underline */
+}
+
+.shopping-cart .product-name a:hover {
+    color: #1558b0; /* Darker Blue on hover */
+    text-decoration: underline; /* Adds underline on hover */
+}
+
+/* Product Info Styles */
+.shopping-cart .product-info .value {
+    font-weight: 400;
+      color: #BD824C;
+}
+
+/* Quantity Input Styles */
+.shopping-cart .quantity-input {
+    margin: auto;
+    width: 80px;
+    border: 1px solid  #BD824C;; /* Light Gray */
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    background-color:  #BD824C;;/* Very Light Gray */
+    color: #BD824C;
+}
+
+/* Price Styles */
+.shopping-cart .price {
+    font-size: 1.5rem;
+    color: #BD824C; /* Warm Brown */
+    font-weight: bold;
+    font-size:25px;
+}
+
+/* Summary Styles */
+.shopping-cart .summary {
+    border-top: 2px solid #BD824C; /* Warm Brown */
+    background: #fafafa; /* Very Light Gray */
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.shopping-cart .summary h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #333; /* Dark Gray */
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.shopping-cart .summary .summary-item {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #BD824C; /* Warm Brown */
+}
+
+/* Payment Button Styles */
+.shopping-cart .payment-btn {
+    background-image: linear-gradient(to right, #BD824C, #660000); /* Warm Brown to Dark Red */
+    color: #fff; /* White */
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.shopping-cart .payment-btn:hover {
+    background-image: linear-gradient(to right, #a36f3d, #550000); /* Lighter Brown to Darker Red */
+}
+/* Delete Icon Styles */
+.shopping-cart .link-remove {
+    font-size: 1.5rem; /* Adjust icon size */
+    color: #BD824C; /* Warm Brown */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and hover effects */
+}
+
+.shopping-cart .link-remove:hover {
+    color: #ff4d4d; /* Bright Red on hover */
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}
+
+/* Delete Icon Styles */
+.shopping-cart .link-remove {
+    font-size: 1.8rem; /* Slightly larger size */
+    color: #BD824C; /* Warm Brown */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    display: inline-block;
+    padding: 8px;
+    border-radius: 50%; /* Circular background for the icon */
+    background-color: rgba(255, 255, 255, 0.8); /* Subtle white background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Slight shadow for depth */
+}
+
+.shopping-cart .link-remove:hover {
+    color: #ff4d4d; /* Bright Red on hover */
+    background-color: rgba(255, 77, 77, 0.2); /* Light red background on hover */
+    transform: scale(1.2); /* Enlarges the icon on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* More shadow on hover */
+}
+
+.custom_buttons {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    color: #333;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.custom_buttons:hover {
+    background-color: #BD824C;
+    color: #fff;
+}
+#contact-details {
+    background-color: #fdfdfd; /* Light background color */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+
+#contact-details label {
+    font-weight: bold; /* Bold labels */
+    color: #333; /* Darker color for labels */
+}
+
+#contact-details span {
+    display: block;
+    margin-top: 5px;
+    color: #555; /* Slightly lighter color for text */
+}
+
+#contact-details .row {
+    margin-bottom: 10px; /* Space between rows */
+}
+#contact-details {
+
+    padding: 25px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(139, 69, 19, 0.6); /* Similar brown shadow effect */
+    border: 1px solid rgba(139, 69, 19, 0.3); /* Border with a similar brown color */
+    position: relative;
+    overflow: hidden; /* Ensures any overflow is hidden */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+#contact-details {
+    background: linear-gradient(135deg, #fffaf0, #f5e6d9); /* Softer, warmer gradient background */
+    padding: 25px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(139, 69, 19, 0.6); /* Brown shadow effect */
+    border: 1px solid rgba(139, 69, 19, 0.3); /* Border with a similar brown color */
+    position: relative;
+    overflow: hidden; /* Ensures any overflow is hidden */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    font-family: 'Arial', sans-serif; /* Updated font */
+    color: #3b2e2e; /* Dark brown text color */
+}
+
+
+
+#contact-details label {
+    font-weight: bold; /* Bold labels */
+    color: #5d4037; /* Darker brown color for labels */
+    font-size: 1rem;
+    letter-spacing: 0.5px; /* Slight letter spacing */
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif; /* Different font for labels */
+}
+
+#contact-details span {
+    display: block;
+    margin-top: 5px;
+    color: #795548; /* Medium brown text color */
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+    font-family: 'Roboto', sans-serif; /* Matching font for consistency */
+}
+
+#contact-details .row {
+    margin-bottom: 15px; /* Increased space between rows */
+}
+
+#contact-details h5 {
+    font-size: 1.3rem;
+    color: #4e342e; /* Rich brown color for heading */
+    border-bottom: 2px solid rgba(139, 69, 19, 0.3); /* Border under the heading in brown */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif; /* Matching font for consistency */
+}
+
+#check-total {
+    background-color: #fdf3e3; /* Soft beige background for a warm, inviting look */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(139, 69, 19, 0.5); /* Warm brown shadow effect */
+    font-family: 'Roboto', sans-serif; /* Consistent font family */
+}
+
+#check-total h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5d4037; /* Rich brown color */
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(139, 69, 19, 0.3); /* Border under the heading */
+    padding-bottom: 10px;
+}
+
+#check-total .list-group-item {
+    background-color: #fff8f0; /* Light cream background for items */
+    border: none; /* Remove default border */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for individual items */
+}
+
+#check-total .list-group-item:hover {
+    box-shadow: 0 8px 16px rgba(139, 69, 19, 0.2); /* Slightly stronger shadow on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+    transition: all 0.3s ease-in-out;
+}
+
+#check-total .image {
+    border-radius: 50%; /* Make images circular */
+    margin-right: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
+}
+
+#check-total h6 {
+    font-size: 1rem;
+    color: #4e342e; /* Dark brown color */
+    margin-top: 10px;
+}
+
+#check-total .text-muted {
+    font-size: 1.1rem;
+    color: #795548; /* Medium brown color for subtotal */
+    font-weight: 500;
+}
+
+#check-total .summary-item .text {
+    font-size: 1.2rem;
+    color: #5d4037; /* Consistent brown color */
+    font-weight: bold;
+}
+
+#check-total .summary-item .price {
+    color: #d32f2f; /* Red color for the total price to stand out */
+}
+
+#check-total .custom_buttons {
+    background: linear-gradient(135deg, #b5651d, #d32f2f); /* Gradient button background */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+#check-total .custom_buttons:hover {
+    background: linear-gradient(135deg, #a64b2a, #b71c1c); /* Darker gradient on hover */
+}
+
+#check-total .grey-text {
+    color: #888; /* Grey text for terms */
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+#check-total ul li {
+    list-style: none; /* Remove default bullet points */
+    margin-left: 0; /* Adjust margin */
+    padding-left: 10px;
+    position: relative;
+}
+
+#check-total ul li::before {
+    content: '•'; /* Custom bullet point */
+    color: #d32f2f; /* Red bullet point */
+    position: absolute;
+    left: 0;
+    font-size: 14px;
+    top: 0;
+}
+
+.navbar {
+    
+    z-index: 1000; 
+    position: relative; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+/* General body styles */
+body.checkout {
+    background-color: #f7f2e7; /* Soft beige background */
+    font-family: 'Roboto', sans-serif; /* Consistent font */
+    color: #4e342e; /* Deep brown text color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+
+    padding: 10px 0;
+}
+
+.navbar .navbar-brand img {
+    max-height: 50px; /* Adjust logo height */
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #ffffff; /* White text for navigation links */
+    font-size: 1rem;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+}
+
+.navbar-toggler .fas {
+    color: #ffffff;
+}
+
+.language_selector a {
+    color: #ffffff; /* White text for language selector */
+    font-weight: bold;
+}
+
+
+
+.vertical-line {
+    border-left: 2px solid #ffffff; /* White vertical line */
+    margin: 0 10px;
+}
+
+/* Footer logo and section title */
+.left h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #5d4037; /* Rich brown color */
+    margin-bottom: 20px;
+}
+
+.left img {
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* Address and city input fields */
+input[type="text"].form-control {
+    border: 2px solid #795548; /* Medium brown border */
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff8f0; /* Light cream background */
+    font-size: 1rem;
+    color: #5d4037; /* Rich brown text */
+}
+
+input[type="text"].form-control:focus {
+    border-color: #b5651d; /* Darker brown on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(181, 101, 29, 0.5); /* Brown glow on focus */
+}
+
+/* Custom radio buttons */
+.custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #b5651d; /* Warm brown for checked state */
+    border-color: #b5651d;
+}
+
+.custom-control-label {
+    font-size: 1rem;
+    color: #4e342e; /* Dark brown text */
+}
+
+/* HR styling */
+hr {
+    border: 1px solid #ffcc80; /* Light orange horizontal line */
+}
+
+/* Buttons for delivery and payment methods */
+.custom_buttons {
+    background: linear-gradient(135deg, #b5651d, #d32f2f); /* Gradient button background */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.custom_buttons:hover {
+    background: linear-gradient(135deg, #a64b2a, #b71c1c); /* Darker gradient on hover */
+}
+
+
+ /* Parent anchor styling */
+
+
+/*
+.navbar-brand:hover {
+    background-color: #ff6f00; 
+    padding: 12px;
+    border-radius: 10px; 
+}*/
+
+
+
+
+
+/* General Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    color: #333; /* Dark text color */
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/* General page styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Product table container styling */
+#productmanagetable {
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#productmanagetable h2 {
+    font-size: 2em; /* Adjusted font size */
+    font-weight: bold;
+    color: #4A4A4A;
+}
+
+#productmanagetable a i {
+    color: #6c757d;
+    margin-left: 15px;
+}
+
+/* Search form styling */
+#searchForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#searchForm input[type="search"],
+#searchForm select,
+#searchForm button,
+#searchForm input[type="button"] {
+    margin-left: 10px;
+    font-size: 14px; /* Adjusted font size */
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#searchForm button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+#searchForm button:hover {
+    background-color: #218838;
+}
+
+#searchForm input[type="button"] {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+#searchForm input[type="button"]:hover {
+    background-color: #c82333;
+}
+
+/* Table styling */
+#tablediv {
+    margin-top: 20px;
+}
+
+#tabledesdign {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px; /* Adjusted font size */
+    font-family: 'Roboto', sans-serif; /* Changed font family */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#tabledesdign th,
+#tabledesdign td {
+    padding: 12px 16px; /* Adjusted padding */
+    border: 1px solid #d1d1d1; /* Softer border color */
+}
+
+#tabledesdign th {
+    background: linear-gradient(135deg, #FC5C11, #FF8C00); /* Orange gradient */
+    color: #ffffff;
+    font-size: 16px; /* Adjusted font size */
+    font-family: 'Roboto', sans-serif; /* Changed font family */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #FF8C00; /* Bottom border for emphasis */
+}
+
+#tabledesdign th:hover {
+    background: linear-gradient(135deg, #FF8C00, #FC5C11); /* Inverted gradient on hover */
+}
+
+#tabledesdign td {
+    background-color: #ffffff; /* White background for readability */
+    color: brown; /* Dark text color for contrast */
+    text-align: center;
+    font-size: 14px; /* Adjusted font size */
+    font-family: 'Roboto', sans-serif; /* Changed font family */
+    font-weight:600;
+}
+
+/* Alias Column Styling */
+#alias {
+    color:  #6F4F28; /* Change text color */
+    font-weight: 700; /* Make text bold */
+     
+    padding: 10px; /* Add padding */
+}
+
+#alias a {
+    color:  #6F4F28; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+}
+
+#alias a:hover {
+    color: #0056b3; /* Darker color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Ensure that the `alias` column is visible on all screen sizes */
+@media (max-width: 767px) {
+    #alias {
+        display: table-cell; /* Ensure column is visible on small screens */
+    }
+}
+
+
+#tabledesdign tr:nth-child(even) td {
+    background-color: #f4f7f8; /* Light gray for alternating rows */
+}
+
+
+
+#tabledesdign img {
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+
+
+/* Edit and Delete Icon Styling */
+
+
+
+
+
+/* Pagination styling */
+#paginationAdmin {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#paginationAdmin .page-link {
+    color: #003366;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #d1d1d1; /* Softer border color */
+    border-radius: 5px;
+    margin: 0 5px;
+    font-size: 14px; /* Adjusted font size */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#paginationAdmin .page-link:hover {
+    background-color: #003366;
+    color: white;
+}
+/* General form styling */
+/* Form Container Styling */
+/* Form Container Styling */
+#searchForm {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px; /* Increased gap for better spacing */
+    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%); /* Gradient background */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+}
+
+/* Category Label Styling */
+#dropDownCategoryLabel {
+    font-size: 20px; /* Larger font size */
+    font-weight: 900; /* Very bold font weight */
+    color: #fc5c11; /* Bright bold color for the label */
+    margin-right: 10px;
+}
+
+#separate
+{
+	  font-size: 18px; /* Larger font size */
+    font-weight: bold; /* Bold font for dropdown */
+  
+    /* Bright bold border */
+  
+}
+
+
+/* Form Group Styling */
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Adjusted gap for better spacing */
+}
+
+/* Consistent Width for Form Controls */
+#searchForm select, #searchForm input[type="search"] {
+    min-width: 200px; /* Ensures consistent width for form controls */
+}
+
+
+
+
+/* Media query for responsiveness */
+/* General Body Styling */
+body {
+    background-color: #f4f6f9; /* Light background color */
+    font-family: 'Arial', sans-serif; /* Clean and modern font */
+}
+
+/* Container for the admin user section */
+#admin-user-container {
+    padding: 20px;
+}
+
+/* Header Section */
+#admin-user-header {
+    margin-bottom: 20px;
+}
+
+#admin-user-title {
+    font-size: 2rem; /* Larger font size for the title */
+    color: #333; /* Dark gray color for better readability */
+}
+
+#add-user-button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: #fff; /* White text color */
+    border-radius: 5px; /* Rounded corners */
+    border: none; /* No border */
+}
+
+#add-user-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Success Message */
+#success-message {
+    font-size: 1.1rem; /* Slightly larger font size */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Table Styles */
+#users-table-container {
+    margin-top: 20px;
+}
+
+#admin-users-table {
+    font-size: 1rem; /* Consistent font size */
+}
+
+#table-header {
+    background-color: #343a40; /* Dark background for table header */
+    color: #fff; /* White text color */
+}
+
+#admin-users-table th, #admin-users-table td {
+    vertical-align: middle; /* Center align text */
+}
+
+
+#pagination-container {
+    text-align: center;
+}
+
+/* Table Header Styling */
+#table-header th {
+    background: linear-gradient(135deg, #FC5C11, #FF8C00); 
+    color: #ffffff; /* White text color */
+    font-size: 1rem; /* Font size */
+    font-family: 'Roboto', sans-serif; /* Font family */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 0.1em; /* Spacing between letters */
+    padding: 10px; /* Padding for spacing */
+}
+
+#table-header th:hover {
+     background: linear-gradient(135deg, #FF8C00, #FC5C11);  /* Inverted gradient on hover */
+}
+/* Header Styling */
+#admin-user-title {
+    font-size: 2rem; /* Increase font size */
+    font-weight: 700; /* Increase font weight for bold text */
+    color: #333333; /* Dark grey color for better readability */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for a lifted effect */
+    padding: 10px; /* Add some padding for spacing */
+  
+    margin-bottom: 20px; /* Add margin below the heading */
+    font-family: 'Roboto', sans-serif; /* Font family */
+}
+
+/* Custom Button Styling */
+/* Warm Tones Button Styling */
+#add-user-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #FF5733; /* Vibrant orange */
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#add-user-button:hover {
+    background-color: #C70039; /* Darker red */
+    transform: scale(1.05);
+}
+
+#add-user-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 87, 51, 0.5); /* Light orange focus shadow */
+}
+
+#add-user-button .fas {
+    margin-right: 8px;
+}
+
+
+.text-secondary {
+    color: #888 !important;
+}
+/* Base styles for icon links */
+#edit-icon-user-admin,
+#delete-icon-user-admin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px; /* Slightly larger for better click area */
+    height: 48px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: 48px; /* Vertically center the icon */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Edit icon specific styles */
+#edit-icon-user-admin {
+    background: linear-gradient(135deg, #4CAF50, #2C6B2F); /* Fresh green gradient */
+}
+
+#edit-icon-user-admin:hover,
+#edit-icon-user-admin:focus {
+    background: linear-gradient(135deg, #2C6B2F, #4CAF50); /* Inverted gradient for hover effect */
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+/* Delete icon specific styles */
+#delete-icon-user-admin {
+    background: linear-gradient(135deg, #F44336, #C62828); /* Bold red gradient */
+}
+
+#delete-icon-user-admin:hover,
+#delete-icon-user-admin:focus {
+    background: linear-gradient(135deg, #C62828, #F44336); /* Inverted gradient for hover effect */
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+/* Icon styles */
+.fas,
+.far {
+    margin: 0;
+    line-height: 48px; /* Vertically center the icon */
+    font-size: 1.5rem;
+}
+/* Table content styling */
+#admin-users-table tbody td {
+    color: #6f4f28; /* Brown color for the table content */
+    font-weight: 600; /* Font weight of 600 */
+    text-align: center; /* Center text horizontally */
+    vertical-align: middle; /* Center text vertically */
+    padding: 12px; /* Add some padding for better readability */
+}
+
+/* Optional: Additional styling for hover effect */
+#admin-users-table tbody tr:hover {
+    background-color: #f5f5f5; /* Light gray background on hover for better readability */
+}
+
+
+
+/*  admin-order for all of ones */
+
+
+/* Styling for admin orders table */
+#admin-order thead th {
+    background: linear-gradient(135deg, #FF8C00, #FC5C11); /* Orange gradient */
+    color: #ffffff; /* White text */
+    font-size: 1rem; /* Font size */
+    font-family: 'Roboto', sans-serif; /* Font family */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 0.1em; /* Letter spacing */
+    padding: 12px; /* Padding */
+}
+
+#admin-order thead th:hover {
+    background: linear-gradient(135deg, #FC5C11, #FF8C00); /* Inverted gradient on hover */
+}
+
+/* Styling for table rows */
+#admin-order tbody td {
+    color: #4f4f4f; /* Dark gray for text */
+    font-weight: 500; /* Medium weight */
+    padding: 12px; /* Padding */
+    text-align: center; /* Center text */
+    vertical-align: middle; /* Center vertically */
+}
+
+#admin-order tbody tr:hover {
+    background-color: #f9f9f9; /* Light background on hover */
+}
+
+/* Heading for the admin orders page */
+#admin-order-heading {
+    font-size: 2.5rem; /* Large font size */
+    font-weight: 700; /* Bold font */
+    color: #FF5733; /* Vibrant orange */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow for effect */
+    margin-bottom: 30px; /* Bottom margin */
+    font-family: 'Roboto', sans-serif; /* Font family */
+}
+
+/* Pagination container styling */
+#pagination-container {
+    text-align: center;
+    padding: 20px 0; /* Padding */
+}
+
+#pagination-container a {
+    margin: 0 5px;
+    padding: 10px 15px;
+    background-color: #FF8C00; /* Button background */
+    color: #fff; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+#pagination-container a:hover {
+    background-color: #FC5C11; /* Darker orange on hover */
+}
+
+/* Success message styling */
+#manage-orders {
+    background-color: #4CAF50; /* Green background */
+    color: #ffffff; /* White text */
+    padding: 15px; /* Padding */
+    font-size: 1.2rem; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Edit and Delete icons styling */
+#admin-order .far, 
+#admin-order .fas {
+    font-size: 1.8rem; /* Icon size */
+    margin: 0 10px;
+    transition: transform 0.2s, color 0.3s;
+}
+
+#admin-order .far:hover, 
+#admin-order .fas:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.green-text {
+    color: #28a745; /* Green color for edit */
+}
+
+.green-text:hover {
+    color: #218838; /* Darker green on hover */
+}
+
+.red-text {
+    color: #dc3545; /* Red color for delete */
+}
+
+.red-text:hover {
+    color: #c82333; /* Darker red on hover */
+}
+/* Base styles for edit and delete icons */
+#admin-order-edit,
+#admin-order-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px; /* Size of the icon */
+    height: 48px;
+    border-radius: 50%; /* Round shape */
+    font-size: 1.8rem; /* Font size of the icon */
+    color: #ffffff; /* White icon color */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Edit icon specific styles */
+#admin-order-edit {
+    background: linear-gradient(135deg, #4CAF50, #2C6B2F); /* Green gradient for edit */
+}
+
+#admin-order-edit:hover {
+    background: linear-gradient(135deg, #2C6B2F, #4CAF50); /* Inverted gradient on hover */
+    transform: scale(1.1); /* Slight scale effect on hover */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+}
+
+/* Delete icon specific styles */
+#admin-order-delete {
+    background: linear-gradient(135deg, #F44336, #C62828); /* Red gradient for delete */
+}
+
+#admin-order-delete:hover {
+    background: linear-gradient(135deg, #C62828, #F44336); /* Inverted gradient on hover */
+    transform: scale(1.1); /* Slight scale effect on hover */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+}
+
+
+
+#admin-order-edit,
+#admin-order-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px; /* Size of the icon */
+    height: 48px;
+    border-radius: 50%; /* Round shape */
+    font-size: 1.8rem; /* Font size of the icon */
+    color: #ffffff; /* White icon color */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Edit icon specific styles */
+#admin-order-edit {
+    background: linear-gradient(135deg, #4CAF50, #388E3C); /* Fresh green gradient for edit */
+    color: #ffffff; /* White icon color */
+}
+
+#admin-order-edit:hover {
+    background: linear-gradient(135deg, #388E3C, #4CAF50); /* Inverted gradient on hover */
+    transform: scale(1.1); /* Slight scale effect on hover */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+}
+
+/* Delete icon specific styles */
+#admin-order-delete {
+    background: linear-gradient(135deg, #F44336, #D32F2F); /* Bold red gradient for delete */
+    color: #ffffff; /* White icon color */
+    color:white;
+}
+
+#admin-order-delete:hover {
+    background: linear-gradient(135deg, #D32F2F, #F44336);
+    transform: scale(1.1); 
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+#admin-order td {
+    color: #6f4f28; 
+}
+
+
+#admin-order th {
+    background: linear-gradient(135deg, #FF8C00, #FC5C11); 
+    color: #ffffff; 
+    font-size: 1rem; 
+    text-transform: uppercase; 
+    padding: 12px; 
+}
+
+#admin-order th:hover {
+    background: linear-gradient(135deg, #FC5C11, #FF8C00); 
+}
+
+
+#manage-orders {
+    background-color: #d4edda; 
+    color: #155724; 
+    border: 1px solid #c3e6cb; 
+    border-radius: 5px; 
+    padding: 15px;
+}
+/* Base styles for edit and delete icons */
+#admin-order-edit,
+#admin-order-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px; /* Size of the icon */
+    height: 48px;
+    border-radius: 50%; /* Round shape */
+    font-size: 1.8rem; /* Font size of the icon */
+    color: #ffffff !important; /* Force white icon color */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Edit icon specific styles */
+#admin-order-edit {
+    background: linear-gradient(135deg, #4CAF50, #388E3C); /* Fresh green gradient for edit */
+    color: #ffffff !important; /* Force white icon color */
+}
+
+#admin-order-edit:hover {
+    background: linear-gradient(135deg, #388E3C, #4CAF50); /* Inverted gradient on hover */
+    transform: scale(1.1); /* Slight scale effect on hover */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+}
+
+/* Delete icon specific styles */
+#admin-order-delete {
+    background: linear-gradient(135deg, #F44336, #D32F2F); /* Bold red gradient for delete */
+    color: #ffffff !important; /* Force white icon color */
+}
+
+#admin-order-delete:hover {
+    background: linear-gradient(135deg, #D32F2F, #F44336); /* Inverted gradient on hover */
+    transform: scale(1.1); /* Slight scale effect on hover */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+}
+/* Styling for the table header with white borders */
+#admin-order thead th {
+    border: 1px solid #ffffff; /* White border for the table header */
+    background: linear-gradient(135deg, #FC5C11, #FF8C00); /* Existing gradient background */
+    color: #ffffff; /* White text */
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 10px;
+}
+
+#admin-order thead th:hover {
+    background: linear-gradient(135deg, #FF8C00, #FC5C11);  /* Inverted gradient on hover */
+    border: 1px solid #ffffff; /* Ensure hover border is also white */
+}
+
+/* Styling for the table cells with white borders */
+#admin-order tbody td {
+    border: 1px solid #ffffff; /* White border for table rows */
+    padding: 12px;
+    vertical-align: middle; /* Align text vertically */
+    font-weight: 600; /* Bold text */
+    color: #6f4f28; /* Brown text color */
+}
+
+/* Optional: Table body row hover effect */
+#admin-order tbody tr:hover {
+    background-color: #f5f5f5; /* Light gray background on hover */
+    border-color: #ffffff; /* Ensure white borders remain on hover */
+}
+
+/* Style for H2 Heading */
+/* Style for H2 Heading */
+
+
+/* Style for H2 Heading */
+#admin-order-heading {
+    color: #333333; /* Dark grey color */
+    font-weight: 650; /* Font weight of 650 */
+    padding-top: 50px; /* Padding to move the heading down */
+    margin-bottom: 20px; /* Space between heading and the table */
+}
+
+/* Style for the Table */
+#admin-order {
+    margin-top: 20px; /* Additional space between the heading and table */
+    margin-bottom: 40px; /* Space below the table */
+}
+
+
+/* Base styling for the vendor management page */
+#admin-vendor {
+    padding: 20px;
+}
+
+#admin-vendor-top {
+    margin-bottom: 20px;
+}
+
+#admin-vendor-top h2 {
+     color: #000000; /* Black color */
+    font-weight: 650; /* Font weight */
+    font-size: 2rem; /* Adjust as needed */
+    margin-bottom: 20px; /* Space below the heading */
+    text-transform: uppercase; /* Uppercase text */
+    font-family: 'Roboto', sans-serif; /* Font family */
+}
+
+#admin-vendor-top a {
+    display: inline-block;
+    font-size: 1.2rem; /* Adjust font size */
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f8f9fa; /* Background color */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#admin-vendor-top a:hover {
+    background-color: #e2e6ea; /* Lighter background on hover */
+    color: #0056b3; /* Darker link color on hover */
+}
+
+/* Success message styling */
+#admin-vendor .alert-success {
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+    border: 1px solid #c3e6cb; /* Green border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding */
+    font-size: 1.2rem; /* Font size */
+    text-align: center; /* Center alignment */
+}
+
+/* Table styling */
+#admin-vendor-table {
+    margin-top: 20px;
+}
+
+#admin-vendor-table table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse borders */
+}
+
+#admin-vendor-table thead th {
+    background: linear-gradient(135deg, #FF8C00, #FC5C11); /* Orange gradient */
+    color: #ffffff; /* White text */
+    font-size: 1rem; /* Font size */
+    font-family: 'Roboto', sans-serif; /* Font family */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 0.1em; /* Letter spacing */
+    padding: 12px; /* Padding */
+    border: 1px solid #ffffff; /* White border */
+}
+
+#admin-vendor-table thead th:hover {
+    background: linear-gradient(135deg, #FC5C11, #FF8C00); /* Inverted gradient on hover */
+}
+
+/* Styling for table rows */
+#admin-vendor-table tbody td {
+    color: #6f4f28; /* Brown text color */
+    font-weight: 600; /* Bold text */
+    padding: 12px; /* Padding */
+    text-align: center; /* Center text */
+    vertical-align: middle; /* Center vertically */
+    border: 1px solid #ffffff; /* White border */
+}
+
+#admin-vendor-table tbody tr:hover {
+    background-color: #f5f5f5; /* Light gray background on hover */
+}
+
+/* Edit and Delete icons styling */
+#admin-vendor-table .far, 
+#admin-vendor-table .fas {
+    font-size: 1.8rem; /* Icon size */
+    margin: 0 10px; /* Margin */
+    transition: transform 0.2s, color 0.3s;
+}
+
+#admin-vendor-table .far:hover, 
+#admin-vendor-table .fas:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.green-text {
+    color: #28a745; /* Green color for edit */
+}
+
+.green-text:hover {
+    color: #218838; /* Darker green on hover */
+}
+
+.red-text {
+    color: #dc3545; /* Red color for delete */
+}
+
+.red-text:hover {
+    color: #c82333; /* Darker red on hover */
+}
+
+/* Base styles for edit and delete icons */
+/* Base styles for edit and delete icons */
+#admin-vendor-edit,
+#admin-vendor-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px; /* Size of the icon */
+    height: 48px;
+    border-radius: 50%; /* Round shape */
+    font-size: 1.8rem; /* Font size of the icon */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    color: #ffffff; /* White color for the icons */
+}
+
+/* Ensure that icons are white by targeting the FontAwesome class directly */
+#admin-vendor-edit .fa, 
+#admin-vendor-delete .fa {
+    color: #ffffff !important; /* Force white color for the icons */
+}
+
+/* Edit icon specific styles */
+#admin-vendor-edit {
+    background: linear-gradient(135deg, #4CAF50, #388E3C); /* Green gradient for edit */
+}
+
+#admin-vendor-edit:hover {
+    background: linear-gradient(135deg, #388E3C, #4CAF50); /* Inverted gradient on hover */
+    transform: scale(1.1); /* Slight scale effect on hover */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+}
+
+/* Delete icon specific styles */
+#admin-vendor-delete {
+    background: linear-gradient(135deg, #F44336, #D32F2F); /* Red gradient for delete */
+}
+
+#admin-vendor-delete:hover {
+    background: linear-gradient(135deg, #D32F2F, #F44336); /* Inverted gradient on hover */
+    transform: scale(1.1); /* Slight scale effect on hover */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+}
+/* Target only the delete icon with the class 'fas fa-trash-alt' */
+#admin-vendor-delete {
+    color: #ffffff !important; /* White color for the icon */
+}
+
+/* Ensure the icon color remains white on hover */
+#admin-vendor-delete:hover {
+    color: #ffffff !important; /* White color on hover */
+}
+#admin-vendor-edit {
+    color: #ffffff !important; /* White color for the icon */
+}
+
+/* Ensure the icon color remains white on hover */
+#admin-vendor-edit:hover {
+    color: #ffffff !important; /* White color on hover */
+}
+/* Style for the heading */
+
+/* Style for the "Add New Vendor" link */
+#add-new-vendor {
+    display: inline-block;
+    background-color: #f2613f;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#add-new-vendor i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+#add-new-vendor:hover {
+    background-color: #9b3922;
+}
+
+#add-new-vendor:active {
+    background-color: #481e14;
+}
+/* Main container styling */
+#admin-basket-main {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+#admin-basket-heading h2 {
+    color: #333; /* Darker text */
+    font-weight: 650;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+/* Table styling */
+#admin-basket-table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for table */
+    background-color: #ffffff;
+    overflow: hidden;
+    border-radius: 10px;
+    animation: fadeInTable 0.5s ease-in-out; /* Animation */
+}
+
+/* Table header styling */
+#admin-basket-table thead th {
+    background: linear-gradient(135deg, #FF8C00, #FC5C11); /* Orange gradient */
+    color: #fff;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 15px;
+    border: 1px solid #fff;
+    font-family: 'Roboto', sans-serif;
+    animation: fadeInTh 0.6s ease-in-out; /* Animation */
+}
+
+#admin-basket-table thead th:hover {
+    background: linear-gradient(135deg, #FC5C11, #FF8C00);
+}
+
+/* Table rows styling */
+#admin-basket-table tbody td {
+    color: #6f4f28; /* Brown text color */
+    font-weight: 600;
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+#admin-basket-table tbody tr {
+    animation: fadeInRow 0.4s ease-in-out;
+}
+
+#admin-basket-table tbody tr:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
+    transform: scale(1.02); /* Slightly enlarge the row */
+    transition: all 0.3s ease;
+}
+
+/* Button styling */
+#add-new-vendor {
+    display: inline-block;
+    background-color: #f2613f;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+#add-new-vendor:hover {
+    background-color: #9b3922;
+  /*  transform: scale(1.05); */
+}
+
+#add-new-vendor:active {
+    background-color: #481e14;
+   /* transform: scale(0.98); */
+}
+
+/* Base styling for the category management page */
+#admin-category-main {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background */
+}
+
+#admin-category-heading {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#admin-category-heading h2 {
+    color: #333; /* Darker heading color */
+    font-weight: 700; /* Bold font weight */
+    font-size: 1.5rem; /* Larger font size */
+    text-transform: uppercase; /* Uppercase text */
+    font-family: 'Roboto', sans-serif; /* Font family */
+}
+
+
+
+
+/* Success message styling */
+#admin-category-message {
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+    border: 1px solid #c3e6cb; /* Green border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px;
+    font-size: 1.2rem;
+}
+
+/* Table styling */
+#admin-category {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse; /* Collapse borders */
+    border-radius: 10px; /* Rounded corners for the table */
+    overflow: hidden; /* Ensure rounded borders apply */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for table */
+}
+
+/* Table header styling */
+#admin-category thead th {
+    background: linear-gradient(135deg, #FF8C00, #FC5C11); /* Orange gradient */
+    color: #ffffff; /* White text */
+    font-size: 1.1rem; /* Font size */
+    padding: 15px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif; /* Font family */
+    letter-spacing: 0.1em; /* Letter spacing */
+    border: none;
+}
+
+/* Table rows styling */
+#admin-category tbody tr {
+    background-color: #fff; /* White background for rows */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth background change and scaling */
+}
+
+#admin-category tbody tr:hover {
+    background-color: #f8f9fa; /* Light gray on hover */
+    transform: scale(1.02); /* Slight scale effect on hover */
+}
+
+#admin-category tbody td {
+    padding: 15px;
+    color: #6f4f28; /* Brown text color */
+    font-size: 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd; /* Light border */
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Styling for images in the table */
+#admin-category tbody td img {
+    border-radius: 10px; /* Rounded images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease;
+}
+
+#admin-category tbody td img:hover {
+    transform: scale(1.05); /* Enlarge image on hover */
+}
+
+/* Edit and delete icon styling */
+#admin-category-edit-icon, 
+#admin-category-delete-icon {
+    font-size: 1.8rem;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#admin-category-edit-icon:hover {
+    color: #28a745; /* Green on hover */
+    transform: scale(1.1);
+}
+
+#admin-category-delete-icon:hover {
+    color: #dc3545; /* Red on hover */
+    transform: scale(1.1);
+}
+
+/* Pagination styling */
+#admin-category-table-div .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#admin-category-table-div .pagination a {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 5px;
+    background-color: #28a745; /* Green background */
+    color: #fff; /* White text */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#admin-category-table-div .pagination a:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slight scale effect */
+}
+/* Admin category heading styling */
+#admin-category-heading {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#admin-category-heading h2 {
+    color: #333; /* Darker heading color */
+    font-weight: 700; /* Bold font weight */
+    font-size: 2.2rem; /* Larger font size */
+    text-transform: uppercase; /* Uppercase text */
+    font-family: 'Roboto', sans-serif; /* Font family */
+    text-align: center; /* Center the heading */
+    flex-grow: 1; /* Allow it to expand in the middle */
+    margin-left: -100px; /* Adjust spacing for proper centering */
+}
+
+#category-icon {
+    font-size: 2rem; /* Adjust size for the icon */
+    color: #FF8C00; /* Orange color */
+    margin-right: 20px; /* Space between icon and heading */
+}
+
+/* "New Category" button styling */
+#new-category-button {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #fff; /* White text */
+    background-color: #fff; /* Green button */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    width:100px;
+}
+
+#new-category-button:hover {
+  background: linear-gradient(45deg, #f2613f, #ff9900);
+    transform: scale(1.05); /* Slight scale effect */
+}
+
+/* Edit and delete icon styling */
+#admin-category-edit-icon ,
+#admin-category-delete-icon {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%; /* Circular icons */
+    font-size: 1.5rem; /* Icon size */
+    text-align: center;
+    line-height: 48px; /* Center icon vertically */
+    color: #ffffff; /* White color for the icon */
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+#admin-category-edit-icon {
+    background-color: #28a745; /* Green background for edit */
+}
+
+#admin-category-delete-icon {
+    background-color: #dc3545; /* Red background for delete */
+}
+
+#admin-category-edit-icon:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.1); /* Slight scale on hover */
+}
+
+#admin-category-delete-icon:hover {
+    background-color: #c82333; /* Darker red on hover */
+    transform: scale(1.1); /* Slight scale on hover */
+}
+
+/* Category table styling remains the same */
+#admin-category {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse; /* Collapse borders */
+    border-radius: 10px; /* Rounded corners for the table */
+    overflow: hidden; /* Ensure rounded borders apply */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for table */
+}
+
+
+/* Additional animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#admin-category-table-div table {
+    animation: fadeInUp 0.5s ease-in-out; /* Fade-in effect for the table */
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#new-category-button:hover {
+    animation: pulse 0.5s infinite; /* Pulsing effect on the new category button */
+}
+
+ @media (max-width: 768px) {
+        /* Ensuring the icon appears below the heading but above the table */
+        #new-category-button {
+            margin-bottom: 1rem;
+        }
+
+        /* Flex container for edit and delete icons */
+        .icon-container {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            gap: 1rem; /* Add space between icons */
+        }
+
+        /* Adjust size of icons on small screens */
+        #admin-category-edit-icon,
+        #admin-category-delete-icon {
+            font-size: 1.5rem; /* Adjust as needed */
+        }
+    }
+    
+    /* Custom CSS for table row background color */
+    #admin-category tbody tr {
+        background-color: #ffffff; /* White background for table rows */
+    }
+    /* Button Animation */
+#new-category-button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background: linear-gradient(45deg, orange, darkorange);
+    width: 60px;
+    height: 60px;
+    padding: 0;
+}
+#new-category-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, darkorange, orange);
+}
+
+/* Alert Animation */
+#admin-category-message {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+#admin-category-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+#admin-category-message.hide {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+/* Table Header Animation */
+#admin-category thead th {
+    transition: background-color 0.3s ease;
+}
+#admin-category thead th:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Table Row Animation */
+#admin-category tbody tr {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+#admin-category tbody tr:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-5px);
+}
+
+/* Table Image Animation */
+#admin-category img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#admin-category img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Animation */
+#admin-category-edit-icon, #admin-category-delete-icon {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+#admin-category-edit-icon:hover, #admin-category-delete-icon:hover {
+    color: #007bff;
+    transform: scale(1.2);
+}
+ 
+ /* Global Styles */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Page Title */
+#admin-product-form-pageTitle {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Form Styling */
+#admin-product-form {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+/* Tabs Styling */
+#admin-product-form-tabs {
+    border-bottom: 2px solid #e9ecef;
+    margin-bottom: 1.5rem;
+}
+
+#admin-product-form-tabs .nav-link {
+    color: #6c757d;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background-color: transparent;
+    transition: color 0.3s ease;
+}
+
+#admin-product-form-tabs .nav-link:hover,
+#admin-product-form-tabs .nav-link.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+
+/* Tab Content */
+.tab-content {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    padding: 1.5rem;
+}
+
+/* Form Inputs */
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Labels */
+label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+/* Buttons */
+.btn {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62;
+    border-color: #545b62;
+}
+
+/* Rich Text Editor */
+.richText {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.richText .richText-toolbar {
+    border-bottom: 1px solid #e9ecef;
+}
+
+.richText .richText-editor {
+    min-height: 200px;
+}
+/* Global styles */
+body {
+    font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Smaller container */
+#admin-product-form-pageContainer {
+    max-width: 800px; /* Reduced width */
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+/* Smaller form width */
+#admin-product-form {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem; /* Slightly smaller padding */
+    margin-top: 1.5rem;
+    max-width: 600px; /* Reduced form width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Page title */
+#admin-product-form-pageTitle {
+    font-size: 2rem; /* Reduced size */
+    font-weight: 700;
+    color: #3498db;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabs */
+#admin-product-form-tabs {
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 1.5rem;
+}
+
+#admin-product-form-tabs .nav-link {
+    color: #7f8c8d;
+    font-weight: 600;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+}
+
+#admin-product-form-tabs .nav-link:hover {
+    color: #2980b9;
+    border-bottom: 2px solid #2980b9;
+}
+
+#admin-product-form-tabs .nav-link.active {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+}
+
+/* Form inputs */
+.form-control {
+    border: 1px solid #dfe6e9;
+    border-radius: 6px;
+ 
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.25);
+}
+
+/* Labels */
+label {
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 0.3rem;
+    display: block;
+    font-size: 0.9rem;
+}
+
+/* Form groups */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+#admin-product-form-submitBtn,
+#admin-product-form-cancelBtn {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+#admin-product-form-submitBtn {
+    background-color: #3498db;
+    border-color: #3498db;
+    color: white;
+}
+
+#admin-product-form-submitBtn:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    transform: scale(1.05);
+}
+
+#admin-product-form-cancelBtn {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    color: white;
+}
+
+#admin-product-form-cancelBtn:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Rich text editor */
+.richText {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.richText .richText-toolbar {
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #f8f9fa;
+}
+/* Global styles */
+body {
+    font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Smaller container */
+#admin-product-form-pageContainer {
+    max-width: 800px; /* Reduced width */
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+/* Smaller form width */
+#admin-product-form {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem; /* Slightly smaller padding */
+    margin-top: 1.5rem;
+    max-width: 600px; /* Reduced form width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Page title */
+#admin-product-form-pageTitle {
+    font-size: 2rem; /* Reduced size */
+    font-weight: 700;
+    color: #3498db;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabs */
+#admin-product-form-tabs {
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 1.5rem;
+}
+
+#admin-product-form-tabs .nav-link {
+    color: #7f8c8d;
+    font-weight: 600;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+}
+
+#admin-product-form-tabs .nav-link:hover {
+    color: #2980b9;
+    border-bottom: 2px solid #2980b9;
+}
+
+#admin-product-form-tabs .nav-link.active {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+}
+#category-title,
+        #category-alias,
+        #category-imageURL,
+        #category-parent {
+            width: 300px; /* Set the width to 100% of the parent container */
+            height: 50px; /* Optional: Adjust the height */
+            font-size: 1.2rem; /* Optional: Adjust the font size */
+        }
+/* Form inputs */
+.form-control {
+    border: 1px solid #dfe6e9;
+    border-radius: 6px;
+    
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.25);
+}
+
+/* Labels */
+label {
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 0.3rem;
+    display: block;
+    font-size: 0.9rem;
+}
+
+/* Form groups */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+#admin-product-form-submitBtn,
+#admin-product-form-cancelBtn {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+#admin-product-form-submitBtn {
+    background-color: #3498db;
+    border-color: #3498db;
+    color: white;
+}
+
+#admin-product-form-submitBtn:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    transform: scale(1.05);
+}
+
+#admin-product-form-cancelBtn {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    color: white;
+}
+
+#admin-product-form-cancelBtn:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Rich text editor */
+}
+
+#admin-product-form {
+    position: relative;
+background: linear-gradient(90deg, #f39c12, #f2711c);  
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    color: #fff; 
+}
+
+
+#admin-product-form > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+#admin-product-form-pageTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff; /* White text color */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Tabs Styling */
+#admin-product-form-tabs .nav-link {
+    color: rgb(255, 255, 255); /* White text for tabs */
+    font-weight: 500;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+#admin-product-form-tabs .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background for active tab */
+    color: #ffffff; /* White for active tab text */
+}
+
+/* Button Styling */
+
+
+
+
+/* Adjust padding and margins for alignment */
+#admin-product-form .row {
+    margin-top: 20px;
+}
+
+#admin-product-form .col-md-4 {
+    text-align: center;
+}
+/* Title Styling */
+#admin-product-form-pageTitle {
+    font-size: 32px;
+    font-weight: 800;
+    color: black;
+    
+    text-transform: uppercase; /* Optional: make the text uppercase */
+    letter-spacing: 2px; /* Optional: adds spacing between letters */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adds a slight shadow for depth */
+    margin-bottom: 30px;
+}
+/* Button Styling */
+#admin-product-form-submitBtn,
+#admin-product-form-cancelBtn {
+    background: linear-gradient(135deg, #057bf3, #1e90ff); /* Blue gradient */
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px; /* Rounded corners */
+    transition: background 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+#admin-product-form-submitBtn {
+    background: linear-gradient(135deg, #28a745, #218838); /* Green gradient for submit */
+}
+
+#admin-product-form-cancelBtn {
+    background: linear-gradient(135deg, #dc3545, #c82333); /* Red gradient for cancel */
+}
+
+/* Hover effects */
+#admin-product-form-submitBtn:hover,
+#admin-product-form-cancelBtn:hover {
+    background: linear-gradient(135deg, #1e90ff, #057bf3); /* Lighter blue gradient */
+    transform: scale(1.05); /* Slight hover animation */
+}
+
+#admin-product-form-submitBtn:active,
+#admin-product-form-cancelBtn:active {
+    background: linear-gradient(135deg, #218838, #28a745); /* Darker green gradient for submit on click */
+    transform: scale(1); /* No scaling on click */
+}
+/* Container for the entire form section */
+/* Container for the entire form section */
+#admin-user-form-div {
+    max-width: 600px; /* Further reduced width */
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     background: linear-gradient(135deg, #FFA500, #FF4500); /* Orange gradient */
+  border-radius: 8px; /* Optional: for rounded corners */
+  padding: 20px; /* Adjust padding as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+#admin-user-form-heading {
+    margin-bottom: 20px;
+}
+
+
+
+#admin-user-form-heading h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #343a40;
+    text-align: center;
+}
+
+/* Form container styling */
+#admin-user-form-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+/* Form wrapper styling */
+form {
+    max-width: 100%; /* Ensure the form fits the container width */
+    margin: 0 auto;
+}
+
+/* Form groups */
+.form-group {
+    margin-bottom: 15px; /* Reduced spacing */
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #495057;
+}
+
+.form-group .form-control {
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    padding: 8px; /* Reduced padding */
+    font-size: 14px;
+    color: #495057;
+}
+
+/* Specific field styling */
+#admin-user-form-login input,
+#admin-user-form-password input,
+#admin-user-form-email input,
+#admin-user-form-name input,
+#admin-user-form-surname input,
+#admin-user-form-phone input {
+    width: 100%;
+}
+
+/* Role section styling */
+#admin-user-form-role {
+    margin-bottom: 15px; /* Reduced spacing */
+}
+
+#admin-user-form-role .form-check-input {
+    margin-right: 10px;
+}
+
+#admin-user-form-role .form-check-label {
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+/* Button styling */
+#admin-user-form-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.custom_buttons {
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 8px 16px; /* Reduced padding */
+    border-radius: 8px;
+    margin: 0 5px; /* Reduced margin */
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 0.9rem; /* Slightly smaller font size */
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+#admin-user-form-submit.custom_buttons {
+    background: linear-gradient(135deg, #28a745, #218838); /* Green gradient */
+}
+
+#admin-user-form-cancel.custom_buttons {
+    background: linear-gradient(135deg, #dc3545, #c82333); /* Red gradient */
+}
+
+.custom_buttons:hover {
+    opacity: 0.9;
+}
+
+.custom_buttons:active {
+    transform: scale(0.98);
+}
+/* Remove or Adjust Border */
+#admin-user-form {
+    background: linear-gradient(90deg, #f39c12, #f2711c);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border: none; /* Removes the border */
+}
+
+/* If you want to keep the border but hide it visually */
+#admin-user-form {
+    border: 1px solid transparent; /* Make the border transparent */
+}
+
+/* General body styling */
+
+    /* Specific styling for the submit button */
+  
+
+    /* Specific styling for the cancel button */
+ 
+/* General container styling */
+#admin-category-form {
+    background-color: #ffffff; /* Clean white background */
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    padding: 25px;
+    margin-top: 20px;
+}
+
+/* Title styling */
+#admin-category-title {
+    color: #007bff; /* Primary color */
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Label styling for all form fields */
+#admin-category-form label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Category title input */
+#category-title {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    transition: all 0.3s ease;
+}
+
+/* Focus state for category title */
+#category-title:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+/* Category alias input */
+#category-alias {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    transition: all 0.3s ease;
+}
+
+/* Focus state for category alias */
+#category-alias:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.4);
+}
+
+/* Category image input */
+#category-imageURL {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    transition: all 0.3s ease;
+}
+
+/* Focus state for category image URL */
+#category-imageURL:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.4);
+}
+
+/* Category parent select box */
+#category-parent {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    transition: all 0.3s ease;
+}
+
+/* Focus state for category parent */
+#category-parent:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.4);
+}
+
+/* Enable checkbox */
+#category-enabled {
+    margin-top: 10px;
+    transform: scale(1.2);
+    position: relative;
+    top: 2px;
+    margin-left: 15px;
+}
+
+/* Styling for the checkbox container */
+#category-enabled-label {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding-left: 15px;
+}
+
+/* Submit button */
+#admin-category-submit {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+
+/* Hover effect for submit button */
+#admin-category-submit:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Cancel button */
+#admin-category-cancel {
+    background-color: #6c757d;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for cancel button */
+#admin-category-cancel:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+#admin-category-title {
+            font-family: 'Arial', sans-serif; /* Font family */
+            font-size: 2.5rem; /* Font size */
+            font-weight: 700; /* Font weight */
+            color: #333; /* Font color */
+            text-transform: uppercase; /* Uppercase text */
+            letter-spacing: 1px; /* Spacing between letters */
+            margin-top: 20px; /* Top margin */
+            margin-bottom: 20px; /* Bottom margin */
+        }
+
+/* Responsive adjustments for small screens */
+/* Base styles */
+body {
+    font-family: Arial, sans-serif; /* Use a clean, modern font */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Heading animation */
+
+
+/* Larger screens */
+@media (min-width: 768px) {
+    #admin-container {
+        flex-direction: row;
+        justify-content: center; /* Center container content */
+        padding: 40px; /* Add more padding */
+    }
+
+    #admin-heading {
+        flex: 1;
+        text-align: center; /* Center heading text */
+        margin-right: 20px;
+    }
+
+    #admin-image {
+        flex: 1;
+        max-width: 30%; /* Reduce the image size */
+        margin-left: 20px;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+    #admin-heading {
+        color: #8b5cd6; /* Light purple for mobile view */
+        font-size: 2em; /* Slightly smaller font size */
+        text-align: center;
+    }
+
+    #admin-image {
+        margin-top: 20px;
+    }
+
+    /* Additional content about admin */
+    #admin-container:after {
+        content: "You have access to manage, edit, and delete records in the database.";
+        display: block;
+        color: #555;
+        font-size: 1.2em;
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
+/* Keyframes for animations */
+@keyframes fadeInSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    #admin-category-form {
+        padding: 15px;
+    }
+    #admin-category-title {
+        font-size: 1.5rem;
+    }
+    #admin-category-submit, #admin-category-cancel {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+
+
+
+.custom_buttons {
+    border-radius: 6px;
+}
+
+.text-center {
+    margin-top: 20px;
+}
+#parent-container {
+            background-color: #f8f9fa; /* Light background for contrast */
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        /* Styling for inner container */
+        #inner-container {
+            background-color: #ffffff; /* White background for form */
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        /* Styling for form inputs */
+        #form-wrapper input[type="text"], 
+        #form-wrapper select, 
+        #form-wrapper input[type="checkbox"] {
+            margin-bottom: 15px;
+        }
+
+        /* Custom submit and cancel buttons */
+        .custom_buttons {
+            width: 45%;
+            margin: 5px;
+        }
+
+        /* Button styling */
+        #admin-category-submit {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        #admin-category-cancel {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        /* Styling for headings */
+        #admin-category-title {
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        /* Extra content styling */
+        #extra-content {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #6c757d;
+            text-align: center;
+        }
+         /* Glassmorphism effect for the form */
+#admin-form-vendor {
+    max-width: 400px; /* Reduced width */
+    margin: 15px auto; /* Adjusted margin for spacing */
+    backdrop-filter: blur(12px);
+    background: linear-gradient(135deg, #ff9800, #ff5722); /* Orange gradient */
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid rgba(255, 165, 0, 0.4); /* Light orange border */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#admin-form-vendor:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#admin-form-vendor-content {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8); /* Slightly translucent background for contrast */
+    border-radius: 8px;
+}
+
+/* Form labels and inputs */
+#vendor-title {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 6px;
+    font-size: 12px; /* Smaller font size */
+}
+
+#admin-form-vendor label {
+    font-size: 12px; /* Smaller font size for labels */
+    color: #444;
+}
+
+/* Custom buttons */
+#admin-form-vendor-submit,
+#admin-form-vendor-cancel {
+    height: 32px; /* Smaller height */
+    width: 60px; /* Smaller width */
+    border: none;
+    border-radius: 16px; /* Increased border radius for a pill shape */
+    color: #fff;
+    font-size: 12px; /* Smaller font size */
+    font-weight: bold;
+    margin: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background: linear-gradient(135deg, #ff9800, #ff5722); /* Orange gradient */
+}
+
+#admin-form-vendor-submit {
+    background: linear-gradient(135deg, #ff9800, #ff5722); /* Orange gradient */
+}
+
+#admin-form-vendor-submit:hover {
+    background: linear-gradient(135deg, #ff5722, #ff9800); /* Reversed gradient on hover */
+    transform: scale(1.03);
+}
+
+#admin-form-vendor-cancel {
+    background: linear-gradient(135deg, #ff9800, #ff5722); /* Orange gradient */
+}
+
+#admin-form-vendor-cancel:hover {
+    background: linear-gradient(135deg, #ff5722, #ff9800); /* Reversed gradient on hover */
+    transform: scale(1.03);
+}
+         
+#admin-vendor-form-heading {
+    font-size: 28px; /* Larger font size for emphasis */
+    font-weight: 700; /* Bold text for prominence */
+    color: #ffffff; /* White color for the text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    margin: 0; /* Remove default margin */
+    padding: 15px; /* Padding around the text */
+    background: linear-gradient(135deg, #ff9800, #ff5722); /* Gradient background */
+    -webkit-background-clip: text; /* Apply gradient to text */
+    -webkit-text-fill-color: transparent; /* Hide default text color */
+    text-align: center; /* Center align the text */
+    border-radius: 8px; /* Rounded corners for the text block */
+}
+        /* Responsive spacing adjustments */
+
+
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%; /* Adjust width for smaller screens */
+        padding: 30px; /* Adjust padding for smaller screens */
+    }
+
+    #submit-btn, #cancel-btn {
+        width: 100px;
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+    }
+
+    .form-control {
+        font-size: 13px;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #admin-product-form-pageContainer {
+        padding: 1rem;
+        max-width: 90%; /* Make the container wider on smaller screens */
+    }
+
+    #admin-product-form {
+        padding: 1rem;
+        max-width: 100%; /* Full width form on smaller screens */
+    }
+
+    #admin-product-form-pageTitle {
+        font-size: 1.8rem;
+    }
+
+    #admin-product-form-submitBtn,
+    #admin-product-form-cancelBtn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #admin-product-form-pageContainer {
+        padding: 1rem;
+        max-width: 90%; /* Make the container wider on smaller screens */
+    }
+
+    #admin-product-form {
+        padding: 1rem;
+        max-width: 100%; /* Full width form on smaller screens */
+    }
+
+    #admin-product-form-pageTitle {
+        font-size: 1.8rem;
+    }
+
+    #admin-product-form-submitBtn,
+    #admin-product-form-cancelBtn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #admin-product-form-pageTitle {
+        font-size: 2rem;
+    }
+
+    #admin-product-form {
+        padding: 1.5rem;
+    }
+
+    #admin-product-form-tabs .nav-link {
+        padding: 0.5rem 1rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+/* Animation for form submission */
+@keyframes submitPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+#admin-product-form-submitBtn:active {
+    animation: submitPulse 0.3s ease;
+}   
+@keyframes fadeInTable {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInTh {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRow {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #new-category-button {
+        padding: 10px 20px;
+        font-size: 1.1rem; /* Slightly reduce the font size */
+    }
+
+    #new-category-button .icon {
+        font-size: 1.5rem; /* Slightly reduce icon size */
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #new-category-button {
+        padding: 8px 16px;
+        font-size: 1rem; /* Further reduce font size */
+    }
+
+    #new-category-button .icon {
+        font-size: 1.2rem; /* Reduce icon size more for smaller screens */
+        padding: 8px;
+    }
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+    #admin-category {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+
+    #admin-category .image {
+        width: 100px;
+        height: 100px;
+    }
+
+    #admin-category-edit-icon,
+    #admin-category-delete-icon {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    .container .custom_product {
+        position: relative;
+    }
+}
+  #admin-container {
+            background-color: #f8f9fa; /* Light gray background */
+            padding: 2rem; /* Padding around the container */
+        }
+
+        #admin-heading {
+            font-size: 2.5rem; /* Adjust heading size */
+            color: #343a40; /* Dark gray color */
+        }
+
+        #admin-image {
+            max-width: 100%; /* Ensure the image doesn't overflow */
+            height: auto;
+        }
+  body {
+            font-family: 'Roboto', sans-serif; /* Apply Google Font */
+            background-color: #f0f2f5; /* Light background */
+            color: #333; /* Default text color */
+            font-weight: 400; /* Regular weight for body text */
+        }
+
+        #admin-container {
+            background-color: #ffffff; /* White background */
+            padding: 2rem; /* Padding around the container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            border-radius: 8px; /* Rounded corners */
+        }
+
+        #admin-heading {
+            font-size: 2.5rem; /* Adjust heading size */
+            color: #007bff; /* Bootstrap primary color */
+            font-weight: 700; /* Bold weight for heading */
+        }
+
+        .lead {
+            color: #6c757d; /* Muted text color */
+            font-weight: 400; /* Regular weight for lead text */
+        }
+
+        #admin-image {
+            max-width: 100%; /* Ensure the image doesn't overflow */
+            height: auto;
+        }
+
+        .btn-custom {
+            background-color: #007bff; /* Bootstrap primary color */
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            border-radius: 25px; /* Rounded button */
+            transition: background-color 0.3s;
+            font-weight: 700; /* Bold weight for button text */
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+            color: #fff;
+        }
+        
+      #add-cart-button {
+    position: relative; /* or absolute, depending on your layout */
+    top: -15px; /* Adjust if needed */
+    /* You can also add other styles here */
+}
+      
+      
+        #addToCartBtn
+        {
+           position: relative; /* or absolute, depending on your layout */
+    top:15px; 
+        }
+        #shopping-cart-heading  h2
+        {
+          font-size:40px;
+        }
+        #shopping-cart-heading  h2
+        {
+          font-size:40px;
+        }
+        
+        
+        /* General Form Styling */
+#delivery-form {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#delivery-form:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Fields */
+#delivery-form input[type="text"],
+#delivery-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#delivery-form input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#delivery-form input[type="text"]:focus,
+#delivery-form select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Form Group Styling */
+#delivery-form .form-group {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+#delivery-form label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Buttons */
+#delivery-form .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#delivery-form .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Delivery Status Section */
+#delivery-form select {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+#delivery-form .m-2 {
+    margin: 0.5rem;
+    padding: 10px;
+}
+
+#delivery-form .form-control {
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+/* Message Styling */
+#delivery-form .form-group span {
+    font-style: italic;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+        
+        

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="blocks/fragments :: head('Manage user - SPARK', 'none')">
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/admin_user_form.css">
+</head>
+<body>
+<div th:replace="blocks/fragments :: admin_navbar"></div>
+<div class="container mt-5" id="admin-user-form-div">
+    <div id="admin-user-form-heading" class="mb-4">
+        <h2 class="text-center">[[#{admin.users.create.title}]]</h2>
+    </div>
+    <form id="admin-user-form-wrapper" th:action="@{/admin/users/save}" onsubmit="return checkLoginUnique(this);" th:object="${user}" method="post">
+        <input type="hidden" id="admin-user-form-id" th:field="*{id}"/>
+        <div id="admin-user-form-container" class="border border-dark rounded p-4">
+            <div id="admin-user-form-login" class="form-group row">
+                <label for="admin-user-form-login-input" class="col-sm-4 col-form-label">[[#{admin.users.login}]]</label>
+                <div class="col-sm-8">
+                    <input type="text" id="admin-user-form-login-input" class="form-control"
+                           th:field="*{login}" required minlength="4" maxlength="128"/>
+                </div>
+            </div>
+            <div id="admin-user-form-password" class="form-group row">
+                <label for="admin-user-form-password-input" class="col-sm-4 col-form-label">[[#{admin.users.password}]]</label>
+                <div class="col-sm-8">
+                    <input type="password" id="admin-user-form-password-input" class="form-control" th:if="${user.id == null}"
+                           th:field="*{password}" required minlength="4" maxlength="128"/>
+                    <input type="password" id="admin-user-form-password-input" class="form-control" th:unless="${user.id == null}"
+                           th:field="*{password}" minlength="4" maxlength="128"/>
+                </div>
+            </div>
+            <div id="admin-user-form-email" class="form-group row">
+                <label for="admin-user-form-email-input" class="col-sm-4 col-form-label">[[#{admin.users.email}]]</label>
+                <div class="col-sm-8">
+                    <input type="email" id="admin-user-form-email-input" class="form-control"
+                           th:field="*{email}" required minlength="8" maxlength="128"/>
+                </div>
+            </div>
+            <div id="admin-user-form-info" th:object="${userInfo}">
+                <input type="hidden" id="admin-user-form-user-id" th:field="*{user_id}"/>
+                <div id="admin-user-form-name" class="form-group row">
+                    <label for="admin-user-form-name-input" class="col-sm-4 col-form-label">[[#{admin.users.name}]]</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="admin-user-form-name-input" class="form-control"
+                               th:field="*{name}" required minlength="4" maxlength="65"/>
+                    </div>
+                </div>
+                <div id="admin-user-form-surname" class="form-group row">
+                    <label for="admin-user-form-surname-input" class="col-sm-4 col-form-label">[[#{admin.users.surname}]]</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="admin-user-form-surname-input" class="form-control"
+                               th:field="*{surname}" required minlength="4" maxlength="65"/>
+                    </div>
+                </div>
+                <div id="admin-user-form-phone" class="form-group row">
+                    <label for="admin-user-form-phone-input" class="col-sm-4 col-form-label">[[#{admin.users.phone}]]</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="admin-user-form-phone-input" class="form-control"
+                               th:field="*{phone}" required minlength="4" maxlength="128"/>
+                    </div>
+                </div>
+            </div>
+            <div id="admin-user-form-role" class="form-group row">
+                <label class="col-sm-4 col-form-label">[[#{admin.users.role}]]</label>
+                <div class="col-sm-8 d-flex flex-wrap">
+                    <th:block th:each="role :${roles}">
+                        <div class="form-check">
+                            <input type="radio" id="admin-user-form-role-input" th:field="*{role}"
+                                   th:value="${role.name()}"
+                                   class="form-check-input"
+                                   required/>
+                            <label class="form-check-label" th:text="${role.name()}"></label>
+                        </div>
+                    </th:block>
+                </div>
+            </div>
+            <div id="admin-user-form-buttons" class="text-center">
+                <button type="submit" id="admin-user-form-submit" class="btn btn-success rounded">[[#{admin.users.create.submit}]]</button>
+                <button type="button" id="admin-user-form-cancel" class="btn btn-danger rounded">[[#{admin.users.create.cancel}]]</button>
+            </div>
+        </div>
+    </form>
+    <div th:insert="~{blocks/fragments :: additional_footer}"></div>
+</div>
+<div th:insert="~{blocks/fragments :: scripts}"></div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#admin-user-form-cancel').on("click", function () {
+            window.location = "[[@{/admin/users}]]";
+        });
+    });
+
+    function checkLoginUnique(form) {
+        url = "[[@{/users/check_login}]]";
+
+        userLogin = $("#admin-user-form-login-input").val();
+        userId = $("#admin-user-form-id").val();
+
+        csrfValue = $("input[name='_csrf']").val();
+
+        params = {id: userId, login: userLogin, _csrf: csrfValue};
+
+        $.post(url, params, function (response) {
+            if (response == "OK") {
+                form.submit();
+            } else if (response == "Duplicate") {
+                showWarningModal("There is another user with login: " + userLogin)
+            } else {
+                showErrorModal("Unknown response from server")
+            }
+        }).fail(function () {
+            showErrorModal("Could not connect to server")
+        });
+        return false;
+    }
+
+    function showModalDialog(title, message) {
+        $("#modalTitle").text(title);
+        $("#modalBody").text(message);
+        $("#myModal").modal();
+    }
+
+    function showErrorModal(message) {
+        showModalDialog("Error", message);
+    }
+
+    function showWarningModal(message) {
+        showModalDialog("Warning", message);
+    }
+</script>
+<!-- Modal section-->
+<div th:replace="blocks/fragments :: showModal"></div>
+</body>
+</html>

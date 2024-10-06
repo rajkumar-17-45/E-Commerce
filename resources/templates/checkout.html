@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="blocks/fragments :: head('Checkout - SPARK', 'none')">
+   
+</head>
+
+<body class="checkout">
+<nav th:fragment="navbar" class="navbar sticky-top navbar-expand-lg">
+    <div class="container">
+        <!--Logo-->
+        <a href="/" class="navbar-brand waves-effect rounded">
+            <img th:src="@{/assets/title.png}" width="100">
+        </a>
+        <!--For smartphones menu-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <i class="fas fa-bars" style="color:#fff; font-size:26px;"></i>
+        </button>
+        <!--Left-->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link waves-effect rounded" aria-current="page" href="/">[[#{navbar.home}]]</a>
+                </li>
+                <li class="nav-item"><a class="nav-link waves-effect rounded"
+                                        href="/category">[[#{navbar.category}]]</a></li>
+            </ul>
+            <ul class="navbar-nav mr-auto ml-auto">
+                <li class="custom_item">
+                    <form class="form-inline" th:action="@{/search}" method="get">
+                        <div class="search-box">
+                            
+                            
+                        </div>
+                    </form>
+                </li>
+            </ul>
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item">
+                    <a sec:authorize="isAuthenticated()" href="/basket" class="nav-link waves-effect rounded">
+                        <em class="fa fa-shopping-cart"></em>
+                        <span class="clearfix d-none d-sm-inline-block">[[#{navbar.cart}]]</span>
+                    </a>
+                    <a sec:authorize="isAnonymous()" class="nav-link waves-effect waves-light rounded"
+                       data-toggle="modal" href="#loginModal" role="button">
+                        <em class="fa fa-shopping-cart"></em>
+                        <span class="clearfix d-none d-sm-inline-block">[[#{navbar.cart}]]</span></span>
+                    </a>
+                </li>
+                <!--Profile dropdown-->
+                <li class="nav-item dropdown ml-3" sec:authorize="isAnonymous()">
+                    <a sec:authorize="isAnonymous()" class="nav-link waves-effect waves-light rounded"
+                       data-toggle="modal" href="#loginModal" role="button">
+                        <span class="fas fa-user text-white"></span>
+                    </a>
+                </li>
+               
+                <!--GitHub, linked ect icons-->
+                <li class="nav-item">
+                    <a href="https://github.com/rajkumar-17-45/Leetcode" class="nav-link waves-effect rounded">
+                        <span class="fab fa-github"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.linkedin.com/in/rajkumarp2305/" class="nav-link waves-effect rounded">
+                        <span class="fab fa-linkedin"></span>
+                    </a>
+                </li>
+                <div class="language_selector">
+                    
+                </div>
+            </ul>
+        </div>
+    </div>
+    <!--Login modal-->
+    <div th:replace="/blocks/login :: loginModal"></div>
+
+</nav>
+    <div class="container">
+    <div>
+        <a href="/" class="navbar-brand waves-effect rounded mt-2">
+            <img  class="favicon-move" th:src="@{/assets/favicon.png}" width="65">
+        </a>
+       
+        <hr class="mt-0"/>
+
+        <div class="py-4 left">
+            <h2>[[#{checkout.checkoutTitle}]]</h2>
+        </div>
+        <div class="row" id="check-total">
+            <div class="custom_product col-md-4 order-md-2 mb-4 sticky-top">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">[[#{checkout.checkoutYourCart}]]</span>
+                </h4>
+                <ul class="custom_product list-group mb-3 sticky-top">
+                    <div class="items" th:each="basketItem: ${orderBaskets}">
+                        <div class="product" th:with="product = ${basketItem.product}">
+                            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                                <div>
+                                    <img class="img-fluid mx-auto d-block image"
+                                         th:src="${product.imageURL}" width="50" height="50"/>
+                                    <h6 class="my-0">
+                                        <a th:text="${product.title}"
+                                           th:href="@{'/product/' + ${product.alias}}"></a>
+                                    </h6>
+                                </div>
+                                <div class="text-muted">
+                                 <span>₹</span>   <span class="productSubtotal"
+                                          th:id="'subtotal' + ${product.id}">[[${basketItem.subtotal}]]</span>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div class="summary-item">
+    <span class="text">[[#{checkout.total}]]</span>
+    <span class="price" style="margin-left: 70px; font-size: 21px; font-weight: 500;" id="totalAmount"></span>
+</div>
+
+                    </li>
+                    <li class="list-group-item">
+                        <div class=" text-center">
+                            <label for="checkoutBtn" class="btn custom_buttons btn-md my-0 p rounded"
+                                   tabindex="0">[[#{checkout.checkoutLast}]]</label>
+                        </div>
+                        <span class="grey-text" style="font-size: 12px">[[#{checkout.termsMain}]]
+                        <ul class="ml-2">
+                            <li class="ml-3">
+                                [[#{checkout.termsFirst}]]
+                            </li>
+                            <li class="ml-3">
+                                [[#{checkout.termsSecond}]]
+                            </li>
+                        </ul></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-8 order-md-1" id="contact-details">
+                <h5 class="mb-4">[[#{checkout.contactDetails}]]</h5>
+                <div class="userInfo" th:with="userInfo = ${user.userInfo}">
+                    <div class="row ml-4">
+                        <div class="col-md-6 mb-3">
+                            <label>[[#{checkout.name}]]</label>
+                            <span th:text="${userInfo.name}"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>[[#{checkout.name}]]</label>
+                            <span th:text="${userInfo.surname}"></span>
+                        </div>
+                    </div>
+                    <div class="row ml-4">
+                        <div class="col-md-6 mb-3">
+                            <label>[[#{checkout.email}]]</label>
+                            <span th:text="${user.email}"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>[[#{checkout.login}]]</label>
+                            <span th:text="${user.login}"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3 ml-4">
+                        <label>[[#{checkout.phone}]]</label>
+                        <span th:text="${userInfo.phone}"></span>
+                    </div>
+                </div>
+
+                <hr class="mb-4">
+
+                <h5 class="mb-3">[[#{checkout.delivery}]]</h5>
+
+                <form th:action="@{/payment}" th:object="${order}" method="post">
+                    <div class="mb-3 ml-4">
+                        <label for="address">[[#{checkout.address}]]</label>
+                        <input style="width: 300px;" th:field="*{address}" type="text" class="form-control" id="address"
+                               placeholder="Anna nagar" required>
+                        <div class="invalid-feedback">
+                            [[#{checkout.errorAddress}]]
+                        </div>
+                    </div>
+
+                    <div class="mb-3 ml-4">
+                        <label for="city">[[#{checkout.city}]]</label>
+                        <input style="width: 300px;" th:field="*{city}" type="text" class="form-control" id="city"
+                               placeholder="Chennai"
+                               required>
+                        <div class="invalid-feedback">
+                            [[#{checkout.errorCity}]]
+                        </div>
+                    </div>
+                    <h6>[[#{checkout.chooseDelivery}]]</h6>
+                    <div class="d-block my-3">
+                        <div class="custom-control custom-radio ml-4">
+                            <input th:field="*{shippingType}" id="ukrPoshta" name="deliveryMethod" type="radio" class="custom-control-input"
+                                   required th:value="0">
+                            <label class="custom-control-label" for="ukrPoshta">Fast Delivery</label>
+                        </div>
+                        <div class="custom-control custom-radio ml-4">
+                            <input th:field="*{shippingType}" id="novaPoshta" name="deliveryMethod" type="radio" class="custom-control-input"
+                                   required th:value="1">
+                            <label class="custom-control-label" for="novaPoshta">Courier</label>
+                        </div>
+                    </div>
+
+                    <hr class="mb-4">
+
+                    <h5 class="mb-3">[[#{checkout.paymentTitle}]]</h5>
+
+                    <div class="d-block my-3">
+                        <div class="custom-control custom-radio ml-4">
+                            <input th:field="*{orderStatus}" id="store" name="paymentMethod" type="radio"
+                                   class="custom-control-input"
+                                   required th:value="${waiting}">
+                            <label class="custom-control-label" for="store">[[#{checkout.paymentFirst}]]</label>
+                        </div>
+
+                        <div class="custom-control custom-radio ml-4">
+                            <input th:field="*{orderStatus}" id="card" name="paymentMethod" type="radio"
+                                   class="custom-control-input"
+                                   required th:value="${payed}">
+                            <label class="custom-control-label" for="card">[[#{checkout.paymentSecond}]]</label>
+                        </div>
+                    </div>
+                    <input type="submit" id="checkoutBtn" class="d-none"/>
+                </form>
+            </div>
+        </div>
+       
+    </div>
+</body>
+<script>
+    // Function to calculate the total value
+    function calculateTotal() {
+        // Get all the subtotal elements
+        var subtotals = document.querySelectorAll('.productSubtotal');
+        var total = 0;
+
+        // Iterate over each subtotal and sum their values
+        subtotals.forEach(function(subtotalElement) {
+            var subtotal = parseFloat(subtotalElement.innerText.replace(/[^\d.-]/g, '')); // Removing non-numeric characters
+            total += isNaN(subtotal) ? 0 : subtotal; // Add the subtotal to the total
+        });
+
+        // Display the total value in the element with id 'totalAmount'
+        var totalAmountElement = document.getElementById('totalAmount');
+        totalAmountElement.innerText = '₹'+ total.toFixed(2) ;
+
+    }
+
+    // Call the calculateTotal function when the page loads
+    window.onload = function() {
+        calculateTotal();
+    };
+</script>
+
+</html>

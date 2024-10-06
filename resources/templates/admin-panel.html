@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="blocks/fragments :: head('Admin panel - SPARK', 'none')">
+<!-- Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Custom CSS with Thymeleaf -->
+<link th:href="@{/css/admin-home.css}" rel="stylesheet">
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f8f9fa;
+    }
+    
+    .admin-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    .welcome-card {
+        background: linear-gradient(135deg, #007bff, #0056b3);
+        color: #ffffff;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 123, 255, 0.1);
+    }
+    
+    .welcome-card h2 {
+        font-weight: 700;
+    }
+    
+    .stat-card {
+        border: none;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stat-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .btn-manage {
+        background-color: #28a745;
+        border-color: #28a745;
+        font-weight: 500;
+        padding: 10px 25px;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-manage:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+        transform: translateY(-2px);
+    }
+    
+    @media (max-width: 768px) {
+        .stat-card {
+            margin-bottom: 1rem;
+        }
+    }
+</style>
+</head>
+
+<body>
+<!-- Inject scripts and navbar -->
+<div th:insert="~{blocks/fragments :: scripts}"></div>
+<div th:replace="blocks/fragments :: admin_navbar"></div>
+
+<!-- Main container -->
+<div class="container-fluid admin-container">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <!-- Welcome Card -->
+            <div class="card welcome-card mb-4">
+                <div class="card-body p-5">
+                    <h2 class="display-4 mb-4">Welcome, Admin!</h2>
+                    <p class="lead mb-4">Manage your database and monitor key statistics from this dashboard.</p>
+                </div>
+            </div>
+            
+            <!-- Statistics Row -->
+            <div class="row mb-4">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card stat-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-users stat-icon text-primary"></i>
+                            <h5 class="card-title">Total Users</h5>
+                            <p class="card-text display-4">1,234</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card stat-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-database stat-icon text-success"></i>
+                            <h5 class="card-title">Database Size</h5>
+                            <p class="card-text display-4">5.2 GB</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card stat-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-clock stat-icon text-warning"></i>
+                            <h5 class="card-title">Last Backup</h5>
+                            <p class="card-text display-4">2 hrs ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="text-center">
+                <a href="/admin/manage-database" class="btn btn-manage btn-lg mr-3">Manage Database</a>
+                <a href="/admin/reports" class="btn btn-outline-primary btn-lg">View Reports</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

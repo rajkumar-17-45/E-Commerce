@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/web_store_test?useSSL=false&allowPublicKeyRetrieval=true
+    password: Raj@2005
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: rajkumarperiyasamy7@gmail.com
+    password: kifg fjmk ndhx xyhq
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+logging:
+  file:
+    name: logs/spring-boot-application.log
+  level:
+    root: INFO
+    org.thymeleaf: INFO
+
+server:
+  port: 8084
+
+stripe:
+  apikey: sk_test_51Q0jJW2K4kcGLSi4HZGZ3TbF7es5jDDvOYkxKPG4G4kvpoM4jVx9R0bDtw4FgCsnGCrBMJGkJCp5aUiJTgKTqvIp00pZAydpPq
